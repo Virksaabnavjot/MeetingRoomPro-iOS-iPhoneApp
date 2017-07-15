@@ -7,6 +7,8 @@
 
 import UIKit
 import SwiftyJSON
+import Alamofire
+import ChameleonFramework
 
 class UserLoginController: UIViewController {
 

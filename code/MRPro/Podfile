@@ -6,6 +6,8 @@ target 'MRPro' do
 
   # Pods for MRPro
   pod 'SwiftyJSON'
+  pod 'Alamofire'
+  pod 'ChameleonFramework/Swift'
 
   target 'MRProTests' do
     inherit! :search_paths
