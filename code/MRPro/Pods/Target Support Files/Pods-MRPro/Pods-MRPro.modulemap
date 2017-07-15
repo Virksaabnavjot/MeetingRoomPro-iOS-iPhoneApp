@@ -1,0 +1,6 @@
+framework module Pods_MRPro {
+  umbrella header "Pods-MRPro-umbrella.h"
+
+  export *
+  module * { export * }
+}

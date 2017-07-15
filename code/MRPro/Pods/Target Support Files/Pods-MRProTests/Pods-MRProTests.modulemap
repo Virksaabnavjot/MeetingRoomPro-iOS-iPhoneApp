@@ -1,0 +1,6 @@
+framework module Pods_MRProTests {
+  umbrella header "Pods-MRProTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

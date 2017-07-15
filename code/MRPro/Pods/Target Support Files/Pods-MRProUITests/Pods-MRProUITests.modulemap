@@ -1,0 +1,6 @@
+framework module Pods_MRProUITests {
+  umbrella header "Pods-MRProUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
