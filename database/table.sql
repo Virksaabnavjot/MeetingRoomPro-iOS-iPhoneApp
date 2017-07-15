@@ -37,3 +37,16 @@ CREATE TABLE `navsingh_MRPro`.`mrp_buildings` (
     `phone` VARCHAR(120) NOT NULL , 
     `email` VARCHAR(120) NOT NULL ,
     `directions` VARCHAR(480) NOT NULL , PRIMARY KEY (`meetingRoomId`))ENGINE = MyISAM;
+
+
+
+  CREATE TABLE `navsingh_MRPro`.`mrp_users` (
+    `userId` INT(120) NOT NULL , `name` VARCHAR(120) NOT NULL ,
+    `accountType` VARCHAR(120) NOT NULL , `email` VARCHAR(120) NOT NULL ,
+    `phone` VARCHAR(120) NOT NULL , `password` VARCHAR(240) NOT NULL ,
+    `token` VARCHAR(240) NOT NULL , `companyId` INT(120) NOT NULL , PRIMARY KEY (`userId`)) ENGINE = MyISAM;
+
+
+
+
+    
