@@ -10,6 +10,10 @@ import SwiftyJSON
 
 class UserLoginController: UIViewController {
 
+    @IBAction func loginButton(_ sender: AnyObject) {
+        performSegue(withIdentifier: "loginSegue", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
