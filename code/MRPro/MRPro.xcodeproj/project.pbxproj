@@ -11,7 +11,7 @@
 		4FE5DE502F5E830F0D1EC374 /* Pods_MRProUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A350E26EC83EA179DCA0FC /* Pods_MRProUITests.framework */; };
 		F05E252601F6A5CB66B49795 /* Pods_MRPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20389BDCFA31B70C406B4A43 /* Pods_MRPro.framework */; };
 		F51A06191F1A6336009985C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A06181F1A6336009985C8 /* AppDelegate.swift */; };
-		F51A061B1F1A6336009985C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A061A1F1A6336009985C8 /* ViewController.swift */; };
+		F51A061B1F1A6336009985C8 /* UserLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A061A1F1A6336009985C8 /* UserLoginController.swift */; };
 		F51A061E1F1A6336009985C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F51A061C1F1A6336009985C8 /* Main.storyboard */; };
 		F51A06211F1A6336009985C8 /* MRPro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F51A061F1F1A6336009985C8 /* MRPro.xcdatamodeld */; };
 		F51A06231F1A6337009985C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F51A06221F1A6337009985C8 /* Assets.xcassets */; };
@@ -49,7 +49,7 @@
 		F2F280FE638FA4E772D91807 /* Pods_MRProTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRProTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51A06151F1A6336009985C8 /* MRPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MRPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51A06181F1A6336009985C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F51A061A1F1A6336009985C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F51A061A1F1A6336009985C8 /* UserLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginController.swift; sourceTree = "<group>"; };
 		F51A061D1F1A6336009985C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F51A06201F1A6336009985C8 /* MRPro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MRPro.xcdatamodel; sourceTree = "<group>"; };
 		F51A06221F1A6337009985C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				F51A06181F1A6336009985C8 /* AppDelegate.swift */,
-				F51A061A1F1A6336009985C8 /* ViewController.swift */,
+				F51A061A1F1A6336009985C8 /* UserLoginController.swift */,
 				F51A061C1F1A6336009985C8 /* Main.storyboard */,
 				F51A06221F1A6337009985C8 /* Assets.xcassets */,
 				F51A06241F1A6337009985C8 /* LaunchScreen.storyboard */,
@@ -453,7 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F51A06211F1A6336009985C8 /* MRPro.xcdatamodeld in Sources */,
-				F51A061B1F1A6336009985C8 /* ViewController.swift in Sources */,
+				F51A061B1F1A6336009985C8 /* UserLoginController.swift in Sources */,
 				F51A06191F1A6336009985C8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -713,6 +713,7 @@
 				F51A06421F1A6337009985C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F51A06431F1A6337009985C8 /* Build configuration list for PBXNativeTarget "MRProTests" */ = {
 			isa = XCConfigurationList;
@@ -721,6 +722,7 @@
 				F51A06451F1A6337009985C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F51A06461F1A6337009985C8 /* Build configuration list for PBXNativeTarget "MRProUITests" */ = {
 			isa = XCConfigurationList;
@@ -729,6 +731,7 @@
 				F51A06481F1A6337009985C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
