@@ -8,6 +8,7 @@ target 'MRPro' do
   pod 'SwiftyJSON'
   pod 'Alamofire'
   pod 'ChameleonFramework/Swift'
+  pod 'SwiftPhotoGallery'
 
   target 'MRProTests' do
     inherit! :search_paths

@@ -3,18 +3,21 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - SwiftPhotoGallery (3.1.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire
   - ChameleonFramework/Swift
+  - SwiftPhotoGallery
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  SwiftPhotoGallery: 85ff48f685dafc5e84639bee5c74ddb4f0f221d3
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 2332ba320da8bca6979cb70fe56aa0f1c459293d
+PODFILE CHECKSUM: c71e1d1f21e2edb8a19b098486aff1094cc385fb
 
 COCOAPODS: 1.2.1
