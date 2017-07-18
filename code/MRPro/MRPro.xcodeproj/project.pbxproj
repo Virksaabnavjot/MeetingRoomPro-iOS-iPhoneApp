@@ -20,8 +20,13 @@
 		F51A063C1F1A6337009985C8 /* MRProUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A063B1F1A6337009985C8 /* MRProUITests.swift */; };
 		F52E796B1F1D82FB00BD49CD /* BuildingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E796A1F1D82FB00BD49CD /* BuildingListTableViewController.swift */; };
 		F52E796D1F1D87D700BD49CD /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E796C1F1D87D700BD49CD /* Building.swift */; };
-		F52E796F1F1D88BA00BD49CD /* GeoSpatialDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E796E1F1D88BA00BD49CD /* GeoSpatialDataTypes.swift */; };
 		F52E79711F1D896800BD49CD /* MeetingRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E79701F1D896800BD49CD /* MeetingRoom.swift */; };
+		F52E79731F1D8CDF00BD49CD /* SelfDesignedBuildingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E79721F1D8CDF00BD49CD /* SelfDesignedBuildingsTableViewCell.swift */; };
+		F52E79751F1D8FF700BD49CD /* MeetingRoomListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E79741F1D8FF700BD49CD /* MeetingRoomListTableViewController.swift */; };
+		F52E79771F1D90A300BD49CD /* CustomJsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E79761F1D90A300BD49CD /* CustomJsonParser.swift */; };
+		F52E797B1F1D94D900BD49CD /* MeetingRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E797A1F1D94D900BD49CD /* MeetingRoomViewController.swift */; };
+		F52E797D1F1D958200BD49CD /* SelfDesignedMeetingRoomsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E797C1F1D958200BD49CD /* SelfDesignedMeetingRoomsTableViewCell.swift */; };
+		F52E797F1F1D9D2F00BD49CD /* jsonFile.json in Resources */ = {isa = PBXBuildFile; fileRef = F52E797E1F1D9D2F00BD49CD /* jsonFile.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +72,13 @@
 		F51A063D1F1A6337009985C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F52E796A1F1D82FB00BD49CD /* BuildingListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingListTableViewController.swift; sourceTree = "<group>"; };
 		F52E796C1F1D87D700BD49CD /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
-		F52E796E1F1D88BA00BD49CD /* GeoSpatialDataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoSpatialDataTypes.swift; sourceTree = "<group>"; };
 		F52E79701F1D896800BD49CD /* MeetingRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingRoom.swift; sourceTree = "<group>"; };
+		F52E79721F1D8CDF00BD49CD /* SelfDesignedBuildingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfDesignedBuildingsTableViewCell.swift; sourceTree = "<group>"; };
+		F52E79741F1D8FF700BD49CD /* MeetingRoomListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingRoomListTableViewController.swift; sourceTree = "<group>"; };
+		F52E79761F1D90A300BD49CD /* CustomJsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomJsonParser.swift; sourceTree = "<group>"; };
+		F52E797A1F1D94D900BD49CD /* MeetingRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingRoomViewController.swift; sourceTree = "<group>"; };
+		F52E797C1F1D958200BD49CD /* SelfDesignedMeetingRoomsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfDesignedMeetingRoomsTableViewCell.swift; sourceTree = "<group>"; };
+		F52E797E1F1D9D2F00BD49CD /* jsonFile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jsonFile.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,8 +166,13 @@
 				F51A06241F1A6337009985C8 /* LaunchScreen.storyboard */,
 				F51A06271F1A6337009985C8 /* Info.plist */,
 				F51A061F1F1A6336009985C8 /* MRPro.xcdatamodeld */,
-				F52E796E1F1D88BA00BD49CD /* GeoSpatialDataTypes.swift */,
 				F52E79701F1D896800BD49CD /* MeetingRoom.swift */,
+				F52E79721F1D8CDF00BD49CD /* SelfDesignedBuildingsTableViewCell.swift */,
+				F52E79741F1D8FF700BD49CD /* MeetingRoomListTableViewController.swift */,
+				F52E79761F1D90A300BD49CD /* CustomJsonParser.swift */,
+				F52E797A1F1D94D900BD49CD /* MeetingRoomViewController.swift */,
+				F52E797C1F1D958200BD49CD /* SelfDesignedMeetingRoomsTableViewCell.swift */,
+				F52E797E1F1D9D2F00BD49CD /* jsonFile.json */,
 			);
 			path = MRPro;
 			sourceTree = "<group>";
@@ -302,6 +317,7 @@
 				F51A06261F1A6337009985C8 /* LaunchScreen.storyboard in Resources */,
 				F51A06231F1A6337009985C8 /* Assets.xcassets in Resources */,
 				F51A061E1F1A6336009985C8 /* Main.storyboard in Resources */,
+				F52E797F1F1D9D2F00BD49CD /* jsonFile.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,11 +482,15 @@
 			files = (
 				F51A06211F1A6336009985C8 /* MRPro.xcdatamodeld in Sources */,
 				F52E796B1F1D82FB00BD49CD /* BuildingListTableViewController.swift in Sources */,
-				F52E796F1F1D88BA00BD49CD /* GeoSpatialDataTypes.swift in Sources */,
+				F52E797D1F1D958200BD49CD /* SelfDesignedMeetingRoomsTableViewCell.swift in Sources */,
 				F52E796D1F1D87D700BD49CD /* Building.swift in Sources */,
+				F52E79751F1D8FF700BD49CD /* MeetingRoomListTableViewController.swift in Sources */,
+				F52E79731F1D8CDF00BD49CD /* SelfDesignedBuildingsTableViewCell.swift in Sources */,
 				F51A061B1F1A6336009985C8 /* UserLoginController.swift in Sources */,
+				F52E79771F1D90A300BD49CD /* CustomJsonParser.swift in Sources */,
 				F52E79711F1D896800BD49CD /* MeetingRoom.swift in Sources */,
 				F51A06191F1A6336009985C8 /* AppDelegate.swift in Sources */,
+				F52E797B1F1D94D900BD49CD /* MeetingRoomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

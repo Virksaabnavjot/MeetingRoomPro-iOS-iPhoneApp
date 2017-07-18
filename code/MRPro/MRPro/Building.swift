@@ -7,17 +7,19 @@
 //
 
 import Foundation
+import CoreLocation
+
 struct Building {
     let id: String
     let name: String
     let numberOfFloors: Int
-    let coordinates: GeoPolygon
+    let coordinates: [CLLocationCoordinate2D]
     let address: String
     let city: String
     let country: String
     let rooms: [MeetingRoom]
     
-    init(id: String, name: String, numberOfFloors: Int, coordinates: GeoPolygon, address: String, city: String, country: String, rooms: [MeetingRoom]) {
+    init(id: String, name: String, numberOfFloors: Int, coordinates: [CLLocationCoordinate2D], address: String, city: String, country: String, rooms: [MeetingRoom]) {
         self.id = id
         self.name = name
         self.numberOfFloors = numberOfFloors

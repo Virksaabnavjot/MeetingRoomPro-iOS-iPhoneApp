@@ -68,7 +68,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="90" id="iWO-QN-KoS" customClass="CustomBuildingsTableViewCell" customModule="MRPro" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="90" id="iWO-QN-KoS" customClass="SelfDesignedBuildingsTableViewCell" customModule="MRPro" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iWO-QN-KoS" id="AUS-Zs-zHP">
@@ -103,10 +103,11 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="cityLabel" destination="QhA-sW-MQD" id="w6y-lh-Vha"/>
-                                    <outlet property="countryLabel" destination="tpI-UK-ec1" id="BaQ-Af-oMz"/>
-                                    <outlet property="nameLabel" destination="jin-5v-HiU" id="Qd4-Zm-i51"/>
-                                    <outlet property="numberOfFloorsLabel" destination="QgQ-HF-FYo" id="xJV-mU-fx3"/>
+                                    <outlet property="cityLabel" destination="QhA-sW-MQD" id="PXX-Rj-B6m"/>
+                                    <outlet property="countryLabel" destination="tpI-UK-ec1" id="C0F-a8-EBj"/>
+                                    <outlet property="nameLabel" destination="jin-5v-HiU" id="XuB-4l-jvH"/>
+                                    <outlet property="numberOfFloorsLabel" destination="QgQ-HF-FYo" id="qHb-al-GoQ"/>
+                                    <segue destination="Inp-P3-MfY" kind="show" identifier="MeetingRoomListSegue" id="v9N-cc-FaU"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -134,7 +135,63 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1850" y="138"/>
+            <point key="canvasLocation" x="1898" y="136"/>
+        </scene>
+        <!--Meeting Room List Table View Controller-->
+        <scene sceneID="whN-aR-ZoE">
+            <objects>
+                <tableViewController id="Inp-P3-MfY" customClass="MeetingRoomListTableViewController" customModule="MRPro" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="LhV-Gb-g1L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoomCell" rowHeight="65" id="KXF-km-w57" customClass="SelfDesignedMeetingRoomsTableViewCell" customModule="MRPro" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KXF-km-w57" id="OWJ-nC-onb">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBU-75-UJD">
+                                            <rect key="frame" x="14" y="-9" width="386" height="61"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Room Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvE-CK-F9J">
+                                            <rect key="frame" x="14" y="38" width="164" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Floor Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnG-Sx-DGx">
+                                            <rect key="frame" x="196" y="38" width="160" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="floorNumberLabel" destination="EnG-Sx-DGx" id="DdT-L7-ohf"/>
+                                    <outlet property="nameLabel" destination="gBU-75-UJD" id="uhf-aT-xnz"/>
+                                    <outlet property="roomTypeLabel" destination="mvE-CK-F9J" id="dba-fO-6NV"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Inp-P3-MfY" id="TDE-Xp-bsw"/>
+                            <outlet property="delegate" destination="Inp-P3-MfY" id="8mS-ic-iYh"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zE2-hZ-Tfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2815" y="137"/>
         </scene>
     </scenes>
 </document>
