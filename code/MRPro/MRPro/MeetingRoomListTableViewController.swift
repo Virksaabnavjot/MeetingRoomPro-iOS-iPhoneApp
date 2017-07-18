@@ -75,13 +75,13 @@ class MeetingRoomListTableViewController: UITableViewController, UISearchBarDele
         return cell
     }
     
-    /**
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "MeetingRoomSegue" {
+        if segue.identifier == "IndoorMapsSegue" {
             
             let row = self.tableView.indexPathForSelectedRow!.row
-            let destinationController = segue.destination as? MeetingRoomViewController
+            let destinationController = segue.destination as? IndoorMapsViewController
             
             destinationController?.building = building
             if searchController.isActive && searchController.searchBar.text != "" {
@@ -91,5 +91,4 @@ class MeetingRoomListTableViewController: UITableViewController, UISearchBarDele
             }
         }
     }
- **/
 }

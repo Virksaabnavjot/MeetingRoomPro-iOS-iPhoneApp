@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -180,6 +182,7 @@
                                     <outlet property="floorNumberLabel" destination="EnG-Sx-DGx" id="DdT-L7-ohf"/>
                                     <outlet property="nameLabel" destination="gBU-75-UJD" id="uhf-aT-xnz"/>
                                     <outlet property="roomTypeLabel" destination="mvE-CK-F9J" id="dba-fO-6NV"/>
+                                    <segue destination="eGH-TS-N2B" kind="show" identifier="IndoorMapsSegue" id="pWc-8T-DxH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -191,7 +194,134 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zE2-hZ-Tfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2815" y="137"/>
+            <point key="canvasLocation" x="2682" y="135"/>
+        </scene>
+        <!--Indoor Maps View Controller-->
+        <scene sceneID="SQN-qe-YZe">
+            <objects>
+                <viewController storyboardIdentifier="IndoorMaps" id="eGH-TS-N2B" customClass="IndoorMapsViewController" customModule="MRPro" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Df5-wH-OsP"/>
+                        <viewControllerLayoutGuide type="bottom" id="H1G-i0-ROb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2KX-hD-9vJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eZV-t5-ePa">
+                                <rect key="frame" x="0.0" y="20" width="375" height="502"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eGH-TS-N2B" id="xb7-9D-0fQ"/>
+                                </connections>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="151" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BWq-8E-1SS">
+                                <rect key="frame" x="0.0" y="522" width="375" height="145"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="145" id="cFY-wg-LHK"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="IndoorMapsInfoCell" rowHeight="151" id="bgD-fN-XLP" customClass="SelfDesignedIndoorMapsInformationTableViewCell" customModule="MRPro" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="151"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bgD-fN-XLP" id="HiB-ix-Nb1">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capacity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8S-tc-ujo">
+                                                    <rect key="frame" x="8" y="59" width="175" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="175" id="74p-oP-Yct"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rc6-RI-3fy">
+                                                    <rect key="frame" x="8" y="38" width="160" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="0K2-dl-Ufw"/>
+                                                        <constraint firstAttribute="width" constant="160" id="iCw-gz-1Wd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="g5c-xh-TXM">
+                                                    <rect key="frame" x="8" y="8" width="328" height="32"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Building Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVp-76-VfF">
+                                                    <rect key="frame" x="8" y="84" width="568" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Floor Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zg-i0-ROa">
+                                                    <rect key="frame" x="191" y="38" width="117" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="117" id="OBG-u8-Pfc"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Rc6-RI-3fy" firstAttribute="firstBaseline" secondItem="6zg-i0-ROa" secondAttribute="firstBaseline" id="2I4-2X-5gC"/>
+                                                <constraint firstItem="g5c-xh-TXM" firstAttribute="leading" secondItem="HiB-ix-Nb1" secondAttribute="leadingMargin" id="2Ny-oe-Hb4"/>
+                                                <constraint firstItem="Rc6-RI-3fy" firstAttribute="baseline" secondItem="6zg-i0-ROa" secondAttribute="baseline" id="6zT-Nf-W5w"/>
+                                                <constraint firstItem="MVp-76-VfF" firstAttribute="top" secondItem="6zg-i0-ROa" secondAttribute="bottom" constant="25" id="I4Q-zR-sUk"/>
+                                                <constraint firstItem="MVp-76-VfF" firstAttribute="top" secondItem="i8S-tc-ujo" secondAttribute="bottom" constant="4" id="ODR-62-kYU"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="MVp-76-VfF" secondAttribute="trailing" constant="16" id="SZo-Ir-e2W"/>
+                                                <constraint firstItem="i8S-tc-ujo" firstAttribute="top" secondItem="g5c-xh-TXM" secondAttribute="bottom" constant="19" id="UCC-HB-Ycd"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="MVp-76-VfF" secondAttribute="bottom" constant="37" id="YlE-cw-dXc"/>
+                                                <constraint firstItem="Rc6-RI-3fy" firstAttribute="leading" secondItem="i8S-tc-ujo" secondAttribute="leading" id="ZMI-rL-wxr"/>
+                                                <constraint firstItem="6zg-i0-ROa" firstAttribute="leading" secondItem="Rc6-RI-3fy" secondAttribute="trailing" constant="23" id="mC6-pA-Kfd"/>
+                                                <constraint firstItem="g5c-xh-TXM" firstAttribute="top" secondItem="HiB-ix-Nb1" secondAttribute="topMargin" id="nKB-bQ-VVJ"/>
+                                                <constraint firstItem="i8S-tc-ujo" firstAttribute="leading" secondItem="MVp-76-VfF" secondAttribute="leading" id="p9N-5U-3QI"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="g5c-xh-TXM" secondAttribute="trailing" constant="31" id="uMX-58-IB7"/>
+                                                <constraint firstItem="i8S-tc-ujo" firstAttribute="top" secondItem="Rc6-RI-3fy" secondAttribute="bottom" id="ydP-cq-vBe"/>
+                                                <constraint firstItem="Rc6-RI-3fy" firstAttribute="top" secondItem="HiB-ix-Nb1" secondAttribute="topMargin" constant="30" id="zLJ-JQ-TuP"/>
+                                                <constraint firstItem="g5c-xh-TXM" firstAttribute="leading" secondItem="Rc6-RI-3fy" secondAttribute="leading" id="zhh-54-Ok1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="buildingNameLabel" destination="MVp-76-VfF" id="KSr-wS-LCA"/>
+                                            <outlet property="capacityLabel" destination="i8S-tc-ujo" id="m9q-Bh-5is"/>
+                                            <outlet property="floorNumberLabel" destination="6zg-i0-ROa" id="rKi-Vw-0Xa"/>
+                                            <outlet property="nameLabel" destination="g5c-xh-TXM" id="PJv-pz-Wwg"/>
+                                            <outlet property="roomTypeLabel" destination="Rc6-RI-3fy" id="APq-IF-aOq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="eGH-TS-N2B" id="e63-PT-GJK"/>
+                                    <outlet property="delegate" destination="eGH-TS-N2B" id="pr1-0x-XxI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BWq-8E-1SS" firstAttribute="bottom" secondItem="H1G-i0-ROb" secondAttribute="top" id="5aC-ZP-WgL"/>
+                            <constraint firstItem="BWq-8E-1SS" firstAttribute="top" secondItem="eZV-t5-ePa" secondAttribute="bottom" id="E5S-R0-KcL"/>
+                            <constraint firstItem="eZV-t5-ePa" firstAttribute="trailing" secondItem="BWq-8E-1SS" secondAttribute="trailing" id="ZRh-KA-fah"/>
+                            <constraint firstItem="eZV-t5-ePa" firstAttribute="leading" secondItem="2KX-hD-9vJ" secondAttribute="leading" id="cU8-X0-vYk"/>
+                            <constraint firstItem="eZV-t5-ePa" firstAttribute="leading" secondItem="BWq-8E-1SS" secondAttribute="leading" id="jT5-il-sYH"/>
+                            <constraint firstAttribute="trailing" secondItem="eZV-t5-ePa" secondAttribute="trailing" id="lUs-L3-Gpg"/>
+                            <constraint firstItem="eZV-t5-ePa" firstAttribute="top" secondItem="Df5-wH-OsP" secondAttribute="bottom" id="nDh-TH-A1s"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="indoorMapInformationTableView" destination="BWq-8E-1SS" id="Dgb-ya-eLN"/>
+                        <outlet property="mapView" destination="eZV-t5-ePa" id="eKU-91-Bqh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Al1-7V-6vH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3445.5999999999999" y="134.48275862068968"/>
         </scene>
     </scenes>
 </document>
