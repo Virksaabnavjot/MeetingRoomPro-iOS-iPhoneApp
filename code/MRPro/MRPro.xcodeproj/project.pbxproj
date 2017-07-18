@@ -19,6 +19,9 @@
 		F51A06311F1A6337009985C8 /* MRProTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A06301F1A6337009985C8 /* MRProTests.swift */; };
 		F51A063C1F1A6337009985C8 /* MRProUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A063B1F1A6337009985C8 /* MRProUITests.swift */; };
 		F52E796B1F1D82FB00BD49CD /* BuildingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E796A1F1D82FB00BD49CD /* BuildingListTableViewController.swift */; };
+		F52E796D1F1D87D700BD49CD /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E796C1F1D87D700BD49CD /* Building.swift */; };
+		F52E796F1F1D88BA00BD49CD /* GeoSpatialDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E796E1F1D88BA00BD49CD /* GeoSpatialDataTypes.swift */; };
+		F52E79711F1D896800BD49CD /* MeetingRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E79701F1D896800BD49CD /* MeetingRoom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		F51A063B1F1A6337009985C8 /* MRProUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRProUITests.swift; sourceTree = "<group>"; };
 		F51A063D1F1A6337009985C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F52E796A1F1D82FB00BD49CD /* BuildingListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingListTableViewController.swift; sourceTree = "<group>"; };
+		F52E796C1F1D87D700BD49CD /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
+		F52E796E1F1D88BA00BD49CD /* GeoSpatialDataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoSpatialDataTypes.swift; sourceTree = "<group>"; };
+		F52E79701F1D896800BD49CD /* MeetingRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingRoom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,12 +149,15 @@
 			children = (
 				F51A06181F1A6336009985C8 /* AppDelegate.swift */,
 				F51A061A1F1A6336009985C8 /* UserLoginController.swift */,
+				F52E796A1F1D82FB00BD49CD /* BuildingListTableViewController.swift */,
+				F52E796C1F1D87D700BD49CD /* Building.swift */,
 				F51A061C1F1A6336009985C8 /* Main.storyboard */,
 				F51A06221F1A6337009985C8 /* Assets.xcassets */,
 				F51A06241F1A6337009985C8 /* LaunchScreen.storyboard */,
 				F51A06271F1A6337009985C8 /* Info.plist */,
 				F51A061F1F1A6336009985C8 /* MRPro.xcdatamodeld */,
-				F52E796A1F1D82FB00BD49CD /* BuildingListTableViewController.swift */,
+				F52E796E1F1D88BA00BD49CD /* GeoSpatialDataTypes.swift */,
+				F52E79701F1D896800BD49CD /* MeetingRoom.swift */,
 			);
 			path = MRPro;
 			sourceTree = "<group>";
@@ -457,7 +466,10 @@
 			files = (
 				F51A06211F1A6336009985C8 /* MRPro.xcdatamodeld in Sources */,
 				F52E796B1F1D82FB00BD49CD /* BuildingListTableViewController.swift in Sources */,
+				F52E796F1F1D88BA00BD49CD /* GeoSpatialDataTypes.swift in Sources */,
+				F52E796D1F1D87D700BD49CD /* Building.swift in Sources */,
 				F51A061B1F1A6336009985C8 /* UserLoginController.swift in Sources */,
+				F52E79711F1D896800BD49CD /* MeetingRoom.swift in Sources */,
 				F51A06191F1A6336009985C8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
