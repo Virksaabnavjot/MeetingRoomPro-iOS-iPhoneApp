@@ -15,6 +15,8 @@ class MyProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //setting a custom color for the view
+        //view.backgroundColor = UIColor.white
+        myProfileScrollView.tintColor = UIColor.orange
         
         
     }
