@@ -27,6 +27,7 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
         
         tableView.tableHeaderView = searchController.searchBar
         searchController.searchBar.placeholder = "Search by Building Name"
+        searchController.searchBar.barTintColor = UIColor.purple
         definesPresentationContext = true
         
         self.refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)

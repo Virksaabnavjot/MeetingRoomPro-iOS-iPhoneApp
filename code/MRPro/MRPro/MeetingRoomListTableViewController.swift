@@ -21,6 +21,7 @@ class MeetingRoomListTableViewController: UITableViewController, UISearchBarDele
         
         tableView.tableHeaderView = searchController.searchBar
         searchController.searchBar.placeholder = "Search Meeting Rooms"
+        searchController.searchBar.barTintColor = UIColor.red
         definesPresentationContext = true
     }
     
