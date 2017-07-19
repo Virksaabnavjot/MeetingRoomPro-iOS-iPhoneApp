@@ -18,6 +18,9 @@ class UserLoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //setting a custom color for the view
+        view.backgroundColor = UIColor.white
+        
     }
 
     override func didReceiveMemoryWarning() {

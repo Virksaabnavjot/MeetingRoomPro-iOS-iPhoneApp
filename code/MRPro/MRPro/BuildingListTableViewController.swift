@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import ChameleonFramework
 
 class BuildingListTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
     
@@ -18,6 +19,8 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //setting background color for the view
+        view.backgroundColor = UIColor.white
         
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
@@ -123,7 +126,11 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
         
         if let buildings = buildings {
             let building = buildings[indexPath.row]
-            
+            //cell.backgroundColor = UIColor.blue
+            cell.nameLabel?.textColor = UIColor.flatBlack()
+            cell.cityLabel?.textColor = UIColor.flatBlue()
+            cell.numberOfFloorsLabel?.textColor = UIColor.flatRedColorDark()
+            cell.countryLabel?.textColor = UIColor.flatForestGreen()
             cell.nameLabel.text = building.name
             cell.cityLabel.text = "City: \(building.city)"
             cell.countryLabel.text = "Country: \(building.country)"

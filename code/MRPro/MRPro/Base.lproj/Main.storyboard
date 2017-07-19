@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--User Login Controller-->
+        <!--User Login & Registration-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="UserLoginController" customModule="MRPro" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,7 +34,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="g43-jp-Cat"/>
+                    <navigationItem key="navigationItem" title="User Login &amp; Registration" id="g43-jp-Cat"/>
                     <connections>
                         <segue destination="sbZ-j3-wKj" kind="show" identifier="loginSegue" id="e5x-Ml-Gvx"/>
                     </connections>
@@ -61,7 +61,7 @@
             </objects>
             <point key="canvasLocation" x="29.600000000000001" y="-645.42728635682158"/>
         </scene>
-        <!--Search-->
+        <!--Building List-->
         <scene sceneID="ZET-v7-dK9">
             <objects>
                 <tableViewController id="sbZ-j3-wKj" customClass="BuildingListTableViewController" customModule="MRPro" customModuleProvider="target" sceneMemberID="viewController">
@@ -78,25 +78,29 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jin-5v-HiU">
-                                            <rect key="frame" x="8" y="0.0" width="584" height="45"/>
+                                            <rect key="frame" x="95" y="0.0" width="272" height="45"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhA-sW-MQD">
-                                            <rect key="frame" x="8" y="33" width="164" height="31"/>
+                                            <rect key="frame" x="95" y="33" width="164" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpI-UK-ec1">
-                                            <rect key="frame" x="8" y="58" width="330" height="31"/>
+                                            <rect key="frame" x="95" y="51" width="260" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="buildingIcon" translatesAutoresizingMaskIntoConstraints="NO" id="RzF-Mw-QDx">
+                                            <rect key="frame" x="8" y="0.0" width="79" height="82"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No. of Floors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QgQ-HF-FYo">
-                                            <rect key="frame" x="180" y="38" width="199" height="21"/>
+                                            <rect key="frame" x="213" y="38" width="108" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -118,7 +122,7 @@
                             <outlet property="delegate" destination="sbZ-j3-wKj" id="Hxe-zG-fRH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Search" id="usF-1a-Hf1"/>
+                    <navigationItem key="navigationItem" title="Building List" id="usF-1a-Hf1"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="EaM-fi-oPH">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -137,45 +141,49 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1898" y="136"/>
+            <point key="canvasLocation" x="1896.8" y="135.38230884557723"/>
         </scene>
-        <!--Meeting Room List Table View Controller-->
+        <!--Meeting Room List-->
         <scene sceneID="whN-aR-ZoE">
             <objects>
                 <tableViewController id="Inp-P3-MfY" customClass="MeetingRoomListTableViewController" customModule="MRPro" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="LhV-Gb-g1L">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" sectionHeaderHeight="28" sectionFooterHeight="28" id="LhV-Gb-g1L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoomCell" rowHeight="65" id="KXF-km-w57" customClass="SelfDesignedMeetingRoomsTableViewCell" customModule="MRPro" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoomCell" rowHeight="87" id="KXF-km-w57" customClass="SelfDesignedMeetingRoomsTableViewCell" customModule="MRPro" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="87"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KXF-km-w57" id="OWJ-nC-onb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="86.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBU-75-UJD">
-                                            <rect key="frame" x="14" y="-9" width="386" height="61"/>
+                                            <rect key="frame" x="109" y="-17" width="248" height="61"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Room Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvE-CK-F9J">
-                                            <rect key="frame" x="14" y="38" width="164" height="21"/>
+                                            <rect key="frame" x="109" y="33" width="164" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Floor Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnG-Sx-DGx">
-                                            <rect key="frame" x="196" y="38" width="160" height="21"/>
+                                            <rect key="frame" x="237" y="33" width="160" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="meetingRoomIcon" translatesAutoresizingMaskIntoConstraints="NO" id="nC1-Ks-XcG">
+                                            <rect key="frame" x="23" y="8" width="63" height="71"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -191,12 +199,13 @@
                             <outlet property="delegate" destination="Inp-P3-MfY" id="8mS-ic-iYh"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Meeting Room List" id="Lgz-hk-mX3"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zE2-hZ-Tfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2682" y="135"/>
+            <point key="canvasLocation" x="2680.8000000000002" y="134.48275862068968"/>
         </scene>
-        <!--Indoor Maps View Controller-->
+        <!--Meeting Room Info-->
         <scene sceneID="SQN-qe-YZe">
             <objects>
                 <viewController storyboardIdentifier="IndoorMaps" id="eGH-TS-N2B" customClass="IndoorMapsViewController" customModule="MRPro" customModuleProvider="target" sceneMemberID="viewController">
@@ -208,14 +217,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eZV-t5-ePa">
-                                <rect key="frame" x="0.0" y="20" width="375" height="502"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eZV-t5-ePa">
+                                <rect key="frame" x="0.0" y="64" width="375" height="270"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="jMH-OO-BhW"/>
+                                    <constraint firstAttribute="width" constant="375" id="kmi-qW-gRb"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="eGH-TS-N2B" id="xb7-9D-0fQ"/>
                                 </connections>
                             </mapView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="151" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BWq-8E-1SS">
-                                <rect key="frame" x="0.0" y="522" width="375" height="145"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="151" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BWq-8E-1SS">
+                                <rect key="frame" x="0.0" y="331" width="375" height="145"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="145" id="cFY-wg-LHK"/>
@@ -306,14 +319,18 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="BWq-8E-1SS" firstAttribute="bottom" secondItem="H1G-i0-ROb" secondAttribute="top" id="5aC-ZP-WgL"/>
+                            <constraint firstItem="eZV-t5-ePa" firstAttribute="leading" secondItem="2KX-hD-9vJ" secondAttribute="leading" id="5xP-gq-q2C"/>
                             <constraint firstItem="BWq-8E-1SS" firstAttribute="top" secondItem="eZV-t5-ePa" secondAttribute="bottom" id="E5S-R0-KcL"/>
                             <constraint firstItem="eZV-t5-ePa" firstAttribute="trailing" secondItem="BWq-8E-1SS" secondAttribute="trailing" id="ZRh-KA-fah"/>
                             <constraint firstItem="eZV-t5-ePa" firstAttribute="leading" secondItem="2KX-hD-9vJ" secondAttribute="leading" id="cU8-X0-vYk"/>
+                            <constraint firstAttribute="trailing" secondItem="eZV-t5-ePa" secondAttribute="trailing" id="eif-S1-dYQ"/>
                             <constraint firstItem="eZV-t5-ePa" firstAttribute="leading" secondItem="BWq-8E-1SS" secondAttribute="leading" id="jT5-il-sYH"/>
                             <constraint firstAttribute="trailing" secondItem="eZV-t5-ePa" secondAttribute="trailing" id="lUs-L3-Gpg"/>
                             <constraint firstItem="eZV-t5-ePa" firstAttribute="top" secondItem="Df5-wH-OsP" secondAttribute="bottom" id="nDh-TH-A1s"/>
+                            <constraint firstItem="eZV-t5-ePa" firstAttribute="top" secondItem="Df5-wH-OsP" secondAttribute="bottom" id="wPf-UI-POc"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Meeting Room Info" id="Vlr-9b-tLr"/>
                     <connections>
                         <outlet property="indoorMapInformationTableView" destination="BWq-8E-1SS" id="Dgb-ya-eLN"/>
                         <outlet property="mapView" destination="eZV-t5-ePa" id="eKU-91-Bqh"/>
@@ -324,4 +341,8 @@
             <point key="canvasLocation" x="3445.5999999999999" y="134.48275862068968"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="buildingIcon" width="80" height="80"/>
+        <image name="meetingRoomIcon" width="79" height="118"/>
+    </resources>
 </document>

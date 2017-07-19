@@ -68,6 +68,10 @@ class MeetingRoomListTableViewController: UITableViewController, UISearchBarDele
         let roomType = meetingRoom.roomType
         print("Room Name: ", roomName)
         
+        cell.nameLabel?.textColor = UIColor.black
+        cell.floorNumberLabel?.textColor = UIColor.flatRed()
+        cell.roomTypeLabel?.textColor = UIColor.flatBlue()
+        
         cell.nameLabel.text = roomName
         cell.floorNumberLabel.text = "Floor: \(String(floorNumber))"
         cell.roomTypeLabel.text = "Type: \(roomType)"
