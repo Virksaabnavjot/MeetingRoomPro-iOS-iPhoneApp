@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoomReviewSystemViewController: ViewController {
+class RoomReviewSystemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         

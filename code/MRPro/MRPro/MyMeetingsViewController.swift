@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyMeetingsViewController: ViewController {
+class MyMeetingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         

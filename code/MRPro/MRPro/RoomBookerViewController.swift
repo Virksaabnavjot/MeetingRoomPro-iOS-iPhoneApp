@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoomBookerViewController: ViewController {
+class RoomBookerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         

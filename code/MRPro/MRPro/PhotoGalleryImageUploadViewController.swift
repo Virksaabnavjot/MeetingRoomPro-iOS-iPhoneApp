@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoGalleryImageUploadViewController: ViewController {
+class PhotoGalleryImageUploadViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
