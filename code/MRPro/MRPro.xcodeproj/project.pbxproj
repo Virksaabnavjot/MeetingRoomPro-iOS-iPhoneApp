@@ -19,6 +19,12 @@
 		F51A06311F1A6337009985C8 /* MRProTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A06301F1A6337009985C8 /* MRProTests.swift */; };
 		F51A063C1F1A6337009985C8 /* MRProUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A063B1F1A6337009985C8 /* MRProUITests.swift */; };
 		F51A4C491F1FBBC2001BC1C7 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A4C481F1FBBC2001BC1C7 /* MyProfileViewController.swift */; };
+		F51A4C4B1F1FDA38001BC1C7 /* MyMeetingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A4C4A1F1FDA38001BC1C7 /* MyMeetingsViewController.swift */; };
+		F51A4C4D1F1FDB4D001BC1C7 /* RoomBookerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A4C4C1F1FDB4D001BC1C7 /* RoomBookerViewController.swift */; };
+		F51A4C4F1F1FDC21001BC1C7 /* PhotoGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A4C4E1F1FDC21001BC1C7 /* PhotoGalleryViewController.swift */; };
+		F51A4C511F1FDC88001BC1C7 /* RoomReviewSystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A4C501F1FDC88001BC1C7 /* RoomReviewSystemViewController.swift */; };
+		F51A4C531F1FDCE6001BC1C7 /* PhotoGalleryImageUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A4C521F1FDCE6001BC1C7 /* PhotoGalleryImageUploadViewController.swift */; };
+		F51A4C551F1FDF26001BC1C7 /* MapNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A4C541F1FDF26001BC1C7 /* MapNavigationViewController.swift */; };
 		F520B4061F1EAF020020E9D0 /* IndoorMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F520B4051F1EAF020020E9D0 /* IndoorMapsViewController.swift */; };
 		F520B4081F1EB4A60020E9D0 /* SelfDesignedIndoorMapsInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F520B4071F1EB4A60020E9D0 /* SelfDesignedIndoorMapsInformationTableViewCell.swift */; };
 		F52E796B1F1D82FB00BD49CD /* BuildingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E796A1F1D82FB00BD49CD /* BuildingListTableViewController.swift */; };
@@ -73,6 +79,12 @@
 		F51A063B1F1A6337009985C8 /* MRProUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRProUITests.swift; sourceTree = "<group>"; };
 		F51A063D1F1A6337009985C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F51A4C481F1FBBC2001BC1C7 /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		F51A4C4A1F1FDA38001BC1C7 /* MyMeetingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMeetingsViewController.swift; sourceTree = "<group>"; };
+		F51A4C4C1F1FDB4D001BC1C7 /* RoomBookerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomBookerViewController.swift; sourceTree = "<group>"; };
+		F51A4C4E1F1FDC21001BC1C7 /* PhotoGalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGalleryViewController.swift; sourceTree = "<group>"; };
+		F51A4C501F1FDC88001BC1C7 /* RoomReviewSystemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomReviewSystemViewController.swift; sourceTree = "<group>"; };
+		F51A4C521F1FDCE6001BC1C7 /* PhotoGalleryImageUploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGalleryImageUploadViewController.swift; sourceTree = "<group>"; };
+		F51A4C541F1FDF26001BC1C7 /* MapNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNavigationViewController.swift; sourceTree = "<group>"; };
 		F520B4051F1EAF020020E9D0 /* IndoorMapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndoorMapsViewController.swift; sourceTree = "<group>"; };
 		F520B4071F1EB4A60020E9D0 /* SelfDesignedIndoorMapsInformationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfDesignedIndoorMapsInformationTableViewCell.swift; sourceTree = "<group>"; };
 		F52E796A1F1D82FB00BD49CD /* BuildingListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingListTableViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +191,12 @@
 				F520B4071F1EB4A60020E9D0 /* SelfDesignedIndoorMapsInformationTableViewCell.swift */,
 				F52E797E1F1D9D2F00BD49CD /* jsonFile.json */,
 				F51A4C481F1FBBC2001BC1C7 /* MyProfileViewController.swift */,
+				F51A4C4A1F1FDA38001BC1C7 /* MyMeetingsViewController.swift */,
+				F51A4C4C1F1FDB4D001BC1C7 /* RoomBookerViewController.swift */,
+				F51A4C4E1F1FDC21001BC1C7 /* PhotoGalleryViewController.swift */,
+				F51A4C501F1FDC88001BC1C7 /* RoomReviewSystemViewController.swift */,
+				F51A4C521F1FDCE6001BC1C7 /* PhotoGalleryImageUploadViewController.swift */,
+				F51A4C541F1FDF26001BC1C7 /* MapNavigationViewController.swift */,
 			);
 			path = MRPro;
 			sourceTree = "<group>";
@@ -487,17 +505,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				F51A4C491F1FBBC2001BC1C7 /* MyProfileViewController.swift in Sources */,
+				F51A4C511F1FDC88001BC1C7 /* RoomReviewSystemViewController.swift in Sources */,
 				F51A06211F1A6336009985C8 /* MRPro.xcdatamodeld in Sources */,
 				F520B4081F1EB4A60020E9D0 /* SelfDesignedIndoorMapsInformationTableViewCell.swift in Sources */,
 				F52E796B1F1D82FB00BD49CD /* BuildingListTableViewController.swift in Sources */,
 				F52E797D1F1D958200BD49CD /* SelfDesignedMeetingRoomsTableViewCell.swift in Sources */,
 				F52E796D1F1D87D700BD49CD /* Building.swift in Sources */,
+				F51A4C4D1F1FDB4D001BC1C7 /* RoomBookerViewController.swift in Sources */,
 				F52E79751F1D8FF700BD49CD /* MeetingRoomListTableViewController.swift in Sources */,
+				F51A4C4F1F1FDC21001BC1C7 /* PhotoGalleryViewController.swift in Sources */,
 				F52E79731F1D8CDF00BD49CD /* SelfDesignedBuildingsTableViewCell.swift in Sources */,
+				F51A4C531F1FDCE6001BC1C7 /* PhotoGalleryImageUploadViewController.swift in Sources */,
 				F51A061B1F1A6336009985C8 /* UserLoginController.swift in Sources */,
 				F52E79771F1D90A300BD49CD /* CustomJsonParser.swift in Sources */,
 				F52E79711F1D896800BD49CD /* MeetingRoom.swift in Sources */,
 				F520B4061F1EAF020020E9D0 /* IndoorMapsViewController.swift in Sources */,
+				F51A4C4B1F1FDA38001BC1C7 /* MyMeetingsViewController.swift in Sources */,
+				F51A4C551F1FDF26001BC1C7 /* MapNavigationViewController.swift in Sources */,
 				F51A06191F1A6336009985C8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

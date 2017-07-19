@@ -1,22 +1,16 @@
 //
-//  MyProfileViewController.swift
+//  RoomReviewSystemViewController.swift
 //  MRPro
 //
-//  Created by Nav
+//  Created by Nav 
 //  Copyright © 2017 MeetingRoom Pro | Navjot Singh Virk | Gymandnutrition.com | Navsingh.org.uk. All rights reserved.
 //
 
 import UIKit
 
-class MyProfileViewController: UIViewController {
-    
-    @IBOutlet weak var myProfileScrollView: UIScrollView!
-    
+class RoomReviewSystemViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setting a custom color for the view
-        //view.backgroundColor = UIColor.white
-        myProfileScrollView.tintColor = UIColor.orange
         
         
     }
@@ -24,5 +18,4 @@ class MyProfileViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
 }

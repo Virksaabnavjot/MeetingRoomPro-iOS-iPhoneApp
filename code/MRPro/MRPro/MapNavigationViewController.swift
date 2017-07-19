@@ -1,5 +1,5 @@
 //
-//  MyProfileViewController.swift
+//  MapNavigationViewController.swift
 //  MRPro
 //
 //  Created by Nav
@@ -8,15 +8,9 @@
 
 import UIKit
 
-class MyProfileViewController: UIViewController {
-    
-    @IBOutlet weak var myProfileScrollView: UIScrollView!
-    
+class MapNavigationViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setting a custom color for the view
-        //view.backgroundColor = UIColor.white
-        myProfileScrollView.tintColor = UIColor.orange
         
         
     }
@@ -24,5 +18,4 @@ class MyProfileViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
 }

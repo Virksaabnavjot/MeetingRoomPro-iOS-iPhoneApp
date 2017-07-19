@@ -384,10 +384,10 @@
             </objects>
             <point key="canvasLocation" x="52" y="-2051"/>
         </scene>
-        <!--View Controller-->
+        <!--My Meetings View Controller-->
         <scene sceneID="9pc-XY-oUE">
             <objects>
-                <viewController id="Kc9-DO-7pm" sceneMemberID="viewController">
+                <viewController id="Kc9-DO-7pm" customClass="MyMeetingsViewController" customModule="MRPro" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8D1-hD-i2d"/>
                         <viewControllerLayoutGuide type="bottom" id="69Q-6u-oAb"/>
@@ -511,10 +511,10 @@
             </objects>
             <point key="canvasLocation" x="22" y="-1137"/>
         </scene>
-        <!--View Controller-->
+        <!--Map Navigation View Controller-->
         <scene sceneID="esU-s7-WTI">
             <objects>
-                <viewController id="u7U-kb-IaI" sceneMemberID="viewController">
+                <viewController id="u7U-kb-IaI" customClass="MapNavigationViewController" customModule="MRPro" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yq0-O8-wbw"/>
                         <viewControllerLayoutGuide type="bottom" id="ORd-mu-0kv"/>
@@ -614,6 +614,33 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iBo-75-rqh">
+                                        <rect key="frame" x="0.0" y="414" width="375" height="189"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psy-uC-PaV">
+                                                <rect key="frame" x="16" y="16" width="108" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Book this Room"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dI-1r-YKg">
+                                                <rect key="frame" x="16" y="41" width="188" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Photo Gallery for this Room"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YL-wB-3hB">
+                                                <rect key="frame" x="16" y="92" width="121" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Review this Room"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3FF-Xo-vpc">
+                                                <rect key="frame" x="16" y="66" width="191" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Upload photos of this Room"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -630,7 +657,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MNn-vK-lzY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3753" y="-709"/>
+            <point key="canvasLocation" x="-3754.4000000000001" y="-709.29535232383819"/>
+        </scene>
+        <!--Room Booker View Controller-->
+        <scene sceneID="d6g-lI-LZy">
+            <objects>
+                <viewController id="gEc-KA-aDl" customClass="RoomBookerViewController" customModule="MRPro" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wPU-a1-QqC"/>
+                        <viewControllerLayoutGuide type="bottom" id="arH-MA-WG1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xyy-r1-ZVF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Room booker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiQ-0N-H3L">
+                                <rect key="frame" x="149" y="183" width="102" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Azi-ri-hND" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2814" y="-675"/>
+        </scene>
+        <!--Photo Gallery View Controller-->
+        <scene sceneID="VhV-Sa-JLh">
+            <objects>
+                <viewController id="eNH-yM-xn4" customClass="PhotoGalleryViewController" customModule="MRPro" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hJj-eC-dxM"/>
+                        <viewControllerLayoutGuide type="bottom" id="M0z-nt-f2k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zaD-Hd-5Os" customClass="PhotoGalleryViewController" customModule="MRPro" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Photo Gallery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="721-rk-UTa">
+                                <rect key="frame" x="149" y="32" width="103" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lss-ZF-buz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3074" y="53"/>
         </scene>
         <!--Meeting Room Info-->
         <scene sceneID="SQN-qe-YZe">
@@ -775,6 +856,60 @@
             </objects>
             <point key="canvasLocation" x="-860" y="-901"/>
         </scene>
+        <!--Room Review System View Controller-->
+        <scene sceneID="Ifo-xW-KWZ">
+            <objects>
+                <viewController id="wYI-Oh-WSL" customClass="RoomReviewSystemViewController" customModule="MRPro" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rOx-wM-2Q8"/>
+                        <viewControllerLayoutGuide type="bottom" id="PLm-WG-aPI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8nA-4B-Ngq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Room Review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQ6-ne-Ift">
+                                <rect key="frame" x="136" y="121" width="103" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iEl-HD-KrA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4957.6000000000004" y="-349.47526236881561"/>
+        </scene>
+        <!--Photo Gallery Image Upload View Controller-->
+        <scene sceneID="LWE-N7-Mzm">
+            <objects>
+                <viewController id="0q8-qS-1XP" customClass="PhotoGalleryImageUploadViewController" customModule="MRPro" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ogX-ru-hgb"/>
+                        <viewControllerLayoutGuide type="bottom" id="il4-ee-rT2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hni-fE-wG7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Photo Upload" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxP-Po-gsE">
+                                <rect key="frame" x="149" y="32" width="105" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zgp-Cv-s3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3948" y="160"/>
+        </scene>
     </scenes>
     <resources>
         <image name="buildingIcon" width="80" height="80"/>
@@ -787,7 +922,7 @@
         <image name="startSearchIcon" width="174" height="93"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="w2V-3x-znN"/>
         <segue reference="D9J-FE-zov"/>
+        <segue reference="U2S-kj-JGf"/>
     </inferredMetricsTieBreakers>
 </document>
