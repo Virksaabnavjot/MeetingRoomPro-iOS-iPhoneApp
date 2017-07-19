@@ -27,7 +27,7 @@ CREATE TABLE `navsingh_MRPro`.`mrp_buildings` (
 
 
   CREATE TABLE `navsingh_MRPro`.`mrp_meeting_rooms` ( 
-    `meetingRoomId`INT(120) NOT NULL ,
+    `meetingRoomId` INT(120) NOT NULL ,
     `buildingId` INT(120) NOT NULL , 
     `name` VARCHAR(120)NOT NULL , 
     `floorNumber` INT(120) NOT NULL , 
@@ -45,8 +45,3 @@ CREATE TABLE `navsingh_MRPro`.`mrp_buildings` (
     `accountType` VARCHAR(120) NOT NULL , `email` VARCHAR(120) NOT NULL ,
     `phone` VARCHAR(120) NOT NULL , `password` VARCHAR(240) NOT NULL ,
     `token` VARCHAR(240) NOT NULL , `companyId` INT(120) NOT NULL , PRIMARY KEY (`userId`)) ENGINE = MyISAM;
-
-
-
-
-    

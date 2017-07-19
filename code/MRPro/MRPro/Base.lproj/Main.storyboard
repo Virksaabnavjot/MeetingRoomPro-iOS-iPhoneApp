@@ -11,6 +11,98 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--My Profile-->
+        <scene sceneID="3uO-SK-mfA">
+            <objects>
+                <viewController title="My Profile" id="dTs-RE-Mda" customClass="MyProfileViewController" customModule="MRPro" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oKD-9g-PGb"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z0l-Xo-YLh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wpg-fE-7Ba">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NdF-T3-bAR">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gSo-3u-pky" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="-64" width="375" height="603"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcH-JI-8Bk">
+                                                <rect key="frame" x="24" y="440" width="343" height="155"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="155" id="IdE-5l-ILA"/>
+                                                </constraints>
+                                                <string key="text">With MRPro, you can search for all the buildings in your company, book, review, look at the gallery, check your profile &amp; meetings and on top of that upload photos of meeting rooms on the system to help other users.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x06-GV-8Bp">
+                                                <rect key="frame" x="24" y="25" width="333" height="91"/>
+                                                <state key="normal" title="Button" image="taglineIcon"/>
+                                                <connections>
+                                                    <segue destination="sbZ-j3-wKj" kind="show" id="Tpq-qc-mnK"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Click the button above to start." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3L-IG-JMN">
+                                                <rect key="frame" x="35" y="124" width="237" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="myProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="12x-WV-EsM">
+                                                <rect key="frame" x="33" y="163" width="106" height="101"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="HcH-JI-8Bk" firstAttribute="bottom" secondItem="gSo-3u-pky" secondAttribute="bottomMargin" id="DXA-zP-hU0"/>
+                                            <constraint firstItem="x06-GV-8Bp" firstAttribute="top" secondItem="gSo-3u-pky" secondAttribute="top" constant="25" id="Nrk-nf-k8a"/>
+                                            <constraint firstItem="x06-GV-8Bp" firstAttribute="leading" secondItem="gSo-3u-pky" secondAttribute="leading" constant="24" id="Oga-wv-MYX"/>
+                                            <constraint firstItem="x06-GV-8Bp" firstAttribute="leading" secondItem="HcH-JI-8Bk" secondAttribute="leading" id="oeo-I2-0nW"/>
+                                            <constraint firstItem="HcH-JI-8Bk" firstAttribute="trailing" secondItem="gSo-3u-pky" secondAttribute="trailingMargin" id="pjg-P8-poJ"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQb-xc-Hwu">
+                                        <rect key="frame" x="166" y="115" width="145" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hQb-xc-Hwu" secondAttribute="trailing" constant="64" id="8bQ-Xy-Bi6"/>
+                                    <constraint firstItem="gSo-3u-pky" firstAttribute="top" secondItem="NdF-T3-bAR" secondAttribute="top" id="HKp-zU-tbf"/>
+                                    <constraint firstAttribute="trailing" secondItem="gSo-3u-pky" secondAttribute="trailing" id="ODW-2Y-kHp"/>
+                                    <constraint firstItem="gSo-3u-pky" firstAttribute="centerX" secondItem="NdF-T3-bAR" secondAttribute="centerX" id="g3P-pO-tY0"/>
+                                    <constraint firstItem="gSo-3u-pky" firstAttribute="leading" secondItem="NdF-T3-bAR" secondAttribute="leading" id="g9K-UI-KUS"/>
+                                    <constraint firstItem="hQb-xc-Hwu" firstAttribute="top" secondItem="NdF-T3-bAR" secondAttribute="top" constant="179" id="goW-Xp-yhI"/>
+                                    <constraint firstItem="gSo-3u-pky" firstAttribute="centerY" secondItem="NdF-T3-bAR" secondAttribute="centerY" id="sNs-9Y-xI0"/>
+                                    <constraint firstAttribute="bottom" secondItem="gSo-3u-pky" secondAttribute="bottom" id="sRe-PK-u0O"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Z0l-Xo-YLh" firstAttribute="top" secondItem="NdF-T3-bAR" secondAttribute="bottom" id="N2y-0w-PqO"/>
+                            <constraint firstItem="NdF-T3-bAR" firstAttribute="top" secondItem="oKD-9g-PGb" secondAttribute="bottom" id="gVp-Af-XYB"/>
+                            <constraint firstAttribute="trailing" secondItem="NdF-T3-bAR" secondAttribute="trailing" id="sud-4B-BDw"/>
+                            <constraint firstItem="NdF-T3-bAR" firstAttribute="leading" secondItem="wpg-fE-7Ba" secondAttribute="leading" id="yAC-P3-naG"/>
+                        </constraints>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="375" height="668"/>
+                    <connections>
+                        <outlet property="myProfileScrollView" destination="NdF-T3-bAR" id="L81-eY-Vkg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jr5-7P-mWu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-759.20000000000005" y="-1853.5232383808097"/>
+        </scene>
         <!--User Login & Registration-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -44,12 +136,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="User Login &amp; Registration" id="g43-jp-Cat"/>
                     <connections>
-                        <segue destination="sbZ-j3-wKj" kind="show" identifier="loginSegue" id="e5x-Ml-Gvx"/>
+                        <segue destination="dTs-RE-Mda" kind="show" identifier="loginSegue" id="alI-HS-PZ2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="37.331334332833585"/>
+            <point key="canvasLocation" x="-1825" y="-1885"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GAp-2b-J4E">
@@ -67,7 +159,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P8h-7e-vNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="29.600000000000001" y="-645.42728635682158"/>
+            <point key="canvasLocation" x="-2857" y="-1498"/>
         </scene>
         <!--Building List-->
         <scene sceneID="ZET-v7-dK9">
@@ -134,7 +226,15 @@
                             <outlet property="delegate" destination="sbZ-j3-wKj" id="Hxe-zG-fRH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Building List" id="usF-1a-Hf1"/>
+                    <navigationItem key="navigationItem" title="Building List" id="usF-1a-Hf1">
+                        <barButtonItem key="rightBarButtonItem" image="myProfileIcon" style="plain" id="mwl-lf-rdZ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RRc-3g-peW">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="My Profile"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="EaM-fi-oPH">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -153,7 +253,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1896.8" y="135.38230884557723"/>
+            <point key="canvasLocation" x="52" y="-2051"/>
         </scene>
         <!--Meeting Room List-->
         <scene sceneID="whN-aR-ZoE">
@@ -168,7 +268,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="99"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KXF-km-w57" id="OWJ-nC-onb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="98.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBU-75-UJD">
@@ -215,11 +315,19 @@
                             <outlet property="delegate" destination="Inp-P3-MfY" id="8mS-ic-iYh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Meeting Room List" id="Lgz-hk-mX3"/>
+                    <navigationItem key="navigationItem" title="Meeting Room List" id="Lgz-hk-mX3">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="YrH-jT-Eyu">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qKH-9G-H9B">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="My Profile"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zE2-hZ-Tfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2680.8000000000002" y="134.48275862068968"/>
+            <point key="canvasLocation" x="22" y="-1137"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="esU-s7-WTI">
@@ -340,7 +448,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MNn-vK-lzY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1741.5999999999999" y="-583.3583208395803"/>
+            <point key="canvasLocation" x="-3753" y="-709"/>
         </scene>
         <!--Meeting Room Info-->
         <scene sceneID="SQN-qe-YZe">
@@ -467,7 +575,15 @@
                             <constraint firstItem="eZV-t5-ePa" firstAttribute="top" secondItem="Df5-wH-OsP" secondAttribute="bottom" id="wPf-UI-POc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Meeting Room Info" id="Vlr-9b-tLr"/>
+                    <navigationItem key="navigationItem" title="Meeting Room Info" id="Vlr-9b-tLr">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="YCW-vR-0Nz">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nG7-l1-FEz">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="My Profile"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="indoorMapInformationTableView" destination="BWq-8E-1SS" id="Dgb-ya-eLN"/>
                         <outlet property="mapView" destination="eZV-t5-ePa" id="eKU-91-Bqh"/>
@@ -475,7 +591,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Al1-7V-6vH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3423" y="694"/>
+            <point key="canvasLocation" x="-860" y="-901"/>
         </scene>
     </scenes>
     <resources>
@@ -483,5 +599,7 @@
         <image name="footerIcon" width="189" height="9"/>
         <image name="footerIcon2" width="262" height="44"/>
         <image name="meetingRoomIcon2" width="78" height="108"/>
+        <image name="myProfileIcon" width="80" height="80"/>
+        <image name="taglineIcon" width="279" height="91"/>
     </resources>
 </document>

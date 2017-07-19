@@ -18,6 +18,7 @@
 		F51A06261F1A6337009985C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F51A06241F1A6337009985C8 /* LaunchScreen.storyboard */; };
 		F51A06311F1A6337009985C8 /* MRProTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A06301F1A6337009985C8 /* MRProTests.swift */; };
 		F51A063C1F1A6337009985C8 /* MRProUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A063B1F1A6337009985C8 /* MRProUITests.swift */; };
+		F51A4C491F1FBBC2001BC1C7 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A4C481F1FBBC2001BC1C7 /* MyProfileViewController.swift */; };
 		F520B4061F1EAF020020E9D0 /* IndoorMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F520B4051F1EAF020020E9D0 /* IndoorMapsViewController.swift */; };
 		F520B4081F1EB4A60020E9D0 /* SelfDesignedIndoorMapsInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F520B4071F1EB4A60020E9D0 /* SelfDesignedIndoorMapsInformationTableViewCell.swift */; };
 		F52E796B1F1D82FB00BD49CD /* BuildingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E796A1F1D82FB00BD49CD /* BuildingListTableViewController.swift */; };
@@ -71,6 +72,7 @@
 		F51A06371F1A6337009985C8 /* MRProUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MRProUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51A063B1F1A6337009985C8 /* MRProUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRProUITests.swift; sourceTree = "<group>"; };
 		F51A063D1F1A6337009985C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F51A4C481F1FBBC2001BC1C7 /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		F520B4051F1EAF020020E9D0 /* IndoorMapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndoorMapsViewController.swift; sourceTree = "<group>"; };
 		F520B4071F1EB4A60020E9D0 /* SelfDesignedIndoorMapsInformationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfDesignedIndoorMapsInformationTableViewCell.swift; sourceTree = "<group>"; };
 		F52E796A1F1D82FB00BD49CD /* BuildingListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingListTableViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				F52E79721F1D8CDF00BD49CD /* SelfDesignedBuildingsTableViewCell.swift */,
 				F520B4071F1EB4A60020E9D0 /* SelfDesignedIndoorMapsInformationTableViewCell.swift */,
 				F52E797E1F1D9D2F00BD49CD /* jsonFile.json */,
+				F51A4C481F1FBBC2001BC1C7 /* MyProfileViewController.swift */,
 			);
 			path = MRPro;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F51A4C491F1FBBC2001BC1C7 /* MyProfileViewController.swift in Sources */,
 				F51A06211F1A6336009985C8 /* MRPro.xcdatamodeld in Sources */,
 				F520B4081F1EB4A60020E9D0 /* SelfDesignedIndoorMapsInformationTableViewCell.swift in Sources */,
 				F52E796B1F1D82FB00BD49CD /* BuildingListTableViewController.swift in Sources */,

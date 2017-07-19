@@ -21,7 +21,7 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
         super.viewDidLoad()
         //setting background color for the view
         view.backgroundColor = UIColor.white
-        
+        self.navigationController?.hidesBarsOnSwipe = true
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         
