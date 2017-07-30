@@ -151,8 +151,8 @@
 		611AEEB61F24AEA600DAFEE1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F52E79701F1D896800BD49CD /* MeetingRoom.swift */,
 				F52E796C1F1D87D700BD49CD /* Building.swift */,
+				F52E79701F1D896800BD49CD /* MeetingRoom.swift */,
 				611AEEBF1F24B1BE00DAFEE1 /* APIConstant.swift */,
 				611AEEB71F24AEA600DAFEE1 /* API.swift */,
 				611AEEB81F24AEA600DAFEE1 /* APIRequestMethods.swift */,

@@ -1,14 +1,18 @@
 //
 //  Building.swift
 //  MRPro
-//
+//  Purpose: Defining a struct for building object 
 //  Created by Nav
 //  Copyright © 2017 MeetingRoom Pro | Navjot Singh Virk | Gymandnutrition.com | Navsingh.org.uk. All rights reserved.
 //
 
+
 import Foundation
 import CoreLocation
 
+/*
+ struct for building object
+ */
 struct Building {
     let id: String
     let name: String

@@ -1,7 +1,7 @@
 //
 //  MeetingRoom.swift
 //  MRPro
-//
+//  Purpose: Defining a struct for Meeting room object
 //  Created by Nav
 //  Copyright © 2017 MeetingRoom Pro | Navjot Singh Virk | Gymandnutrition.com | Navsingh.org.uk. All rights reserved.
 //
@@ -9,6 +9,9 @@
 import Foundation
 import CoreLocation
 
+/*
+ struct for Meeting room object
+ */
 struct MeetingRoom {
     let id: Int
     let buildingId: String

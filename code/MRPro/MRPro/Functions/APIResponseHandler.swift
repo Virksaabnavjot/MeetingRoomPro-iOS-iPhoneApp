@@ -2,8 +2,7 @@
 //  APIConstant.swift
 //  MRPro
 //  Purpose: This is a api response handler class
-//  Created by Nav
-//  Copyright © 2017 MeetingRoom Pro | Navjot Singh Virk | Gymandnutrition.com | Navsingh.org.uk. All rights reserved.
+//  Reference: This is implemented with the help of SwiftyJson https://github.com/SwiftyJSON/SwiftyJSON
 //
 
 import UIKit
