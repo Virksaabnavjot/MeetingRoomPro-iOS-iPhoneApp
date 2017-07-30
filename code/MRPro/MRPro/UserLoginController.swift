@@ -7,19 +7,23 @@
 
 import UIKit
 import SwiftyJSON
-import Alamofire
 import ChameleonFramework
+import Foundation
 
 class UserLoginController: UIViewController {
+    let loginUrl = "https://www.navsingh.org.uk/mrpro/api/login.php"
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
 
     @IBAction func loginButton(_ sender: AnyObject) {
-        performSegue(withIdentifier: "loginSegue", sender: self)
+        
+    performSegue(withIdentifier: "loginSegue", sender: self)
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setting a custom color for the view
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "myProfileIcon.png")!)
         
     }
 
