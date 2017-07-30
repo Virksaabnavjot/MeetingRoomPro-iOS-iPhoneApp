@@ -1,5 +1,5 @@
 //
-//  RegistrationVC.swift
+//  RegistrationViewController.swift
 //  MRPro
 //
 //  Copyright © 2017 MeetingRoom Pro | Navjot Singh Virk | Gymandnutrition.com | Navsingh.org.uk. All rights reserved.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegistrationVC: UIViewController {
+class RegistrationViewController: UIViewController {
 
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var confirmPasswordTxtFld: UITextField!
