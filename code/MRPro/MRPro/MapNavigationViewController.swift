@@ -172,7 +172,7 @@ class MapNavigationViewController: UIViewController , MKMapViewDelegate , UIImag
         
         if segue.identifier == "toBookThisRoom" {
             
-            let destinationController = segue.destination as? RoomBookingVC
+            let destinationController = segue.destination as? RoomBookingViewController
             
             destinationController?.meetingRoom = meetingRoom
             
@@ -180,7 +180,7 @@ class MapNavigationViewController: UIViewController , MKMapViewDelegate , UIImag
         
         if segue.identifier == "toPhotoGallery" {
             
-            let destinationController = segue.destination as? PhotoGalleryVC
+            let destinationController = segue.destination as? PhotoGalleryViewController
             
             destinationController?.meetingRoom = meetingRoom
             
@@ -188,7 +188,7 @@ class MapNavigationViewController: UIViewController , MKMapViewDelegate , UIImag
         
         if segue.identifier == "toRateVC" {
             
-            let destinationController = segue.destination as? RateVC
+            let destinationController = segue.destination as? RateViewController
             
             destinationController?.meetingRoom = meetingRoom
             

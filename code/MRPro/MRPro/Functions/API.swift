@@ -9,6 +9,7 @@
 import UIKit
 import KVNProgress
 import Alamofire
+
 open class API: NSObject {
     
     //Initialization of Singleton SharedInstance of API Class
@@ -28,7 +29,7 @@ open class API: NSObject {
     public typealias completionHandlerCardUpload = ((Bool,Dictionary<String, AnyObject>?,CGFloat,Bool)->Void)?
 
     
-//MARK: Error and Response Handler
+    //Error and Response Handler
     
     fileprivate func displayError(_ error:NSError!,needDismiss:Bool = false){
         
@@ -57,17 +58,7 @@ open class API: NSObject {
         
     }
     
-
-    
-
-
-    
-  
-   
-
-  
-    
-    //MARK: LOGIN
+    //LOGIN
     func login(_ dicRequest:Dictionary<String,Any>?,block:completionHandler){
         
         KVNProgress.show()
@@ -94,7 +85,7 @@ open class API: NSObject {
     }
     
     
-    //MARK: Register User
+    //Register User
     func register(_ dicRequest:Dictionary<String,Any>?,block:completionHandler){
         
         KVNProgress.show()
@@ -155,8 +146,7 @@ open class API: NSObject {
     func getRoomList(_ dicRequest:Dictionary<String,Any>?,block:completionHandler){
         
         KVNProgress.show()
-        
-        
+
         APIRequestMethods.apiPostCallWithOutEncoding(API_RoomsList, params: dicRequest) {(jsonData, error, statusCode) -> Void in
             if error != nil {
                 KVNProgress.dismiss(completion: {
@@ -179,13 +169,8 @@ open class API: NSObject {
         
         
     }
-
-    
     
     func searchBuildingList(_ dicRequest:Dictionary<String,Any>?,block:completionHandler){
-        
-//        KVNProgress.show()
-        
         
         APIRequestMethods.apiPostCallWithOutEncoding(API_BuildingSearch, params: dicRequest) {(jsonData, error, statusCode) -> Void in
             if error != nil {
@@ -199,15 +184,12 @@ open class API: NSObject {
                 }
             }
         }
-        
-        
     }
     
     
     func getUsersList(_ dicRequest:Dictionary<String,Any>?,block:completionHandler){
         
         KVNProgress.show()
-        
         
         APIRequestMethods.apiPostCallWithOutEncoding(API_GetAllUsers, params: dicRequest) {(jsonData, error, statusCode) -> Void in
             if error != nil {
@@ -228,14 +210,11 @@ open class API: NSObject {
                 }
             }
         }
-        
-        
     }
     
     func bookRoom(_ dicRequest:Dictionary<String,Any>?,block:completionHandler){
         
         KVNProgress.show()
-        
         
         APIRequestMethods.apiPostCallWithOutEncoding(API_BookRoom, params: dicRequest) {(jsonData, error, statusCode) -> Void in
             if error != nil {
@@ -256,14 +235,11 @@ open class API: NSObject {
                 }
             }
         }
-        
-        
     }
     
     func getRoomImages(_ dicRequest:Dictionary<String,Any>?,block:completionHandler){
         
         KVNProgress.show()
-        
         
         APIRequestMethods.apiPostCallWithOutEncoding(API_GetPhotos, params: dicRequest) {(jsonData, error, statusCode) -> Void in
             if error != nil {
@@ -284,14 +260,11 @@ open class API: NSObject {
                 }
             }
         }
-        
-        
     }
     
     func postReview(_ dicRequest:Dictionary<String,Any>?,block:completionHandler){
         
         KVNProgress.show()
-        
         
         APIRequestMethods.apiPostCallWithOutEncoding(API_PostReview, params: dicRequest) {(jsonData, error, statusCode) -> Void in
             if error != nil {
@@ -312,9 +285,8 @@ open class API: NSObject {
                 }
             }
         }
-        
-        
     }
+    
     func getAllMyMeetings(_ dicRequest:Dictionary<String,Any>?,block:completionHandler){
         
         KVNProgress.show()
@@ -339,8 +311,6 @@ open class API: NSObject {
                 }
             }
         }
-        
-        
     }
     
     
@@ -362,13 +332,13 @@ open class API: NSObject {
                         if (data != nil) {
                             block!(false,data!)
                         }else{
-//                            BasicFunctions.displayAlert(SERVER_ERROR)
+                            
                         }
                     })
                 }
             }else{
                 KVNProgress.dismiss(completion: {
-//                    BasicFunctions.displayAlert(SERVER_ERROR)
+
                 })
             }
         }
@@ -378,7 +348,6 @@ open class API: NSObject {
     func getRoomReviews(_ dicRequest:Dictionary<String,Any>?,block:completionHandler){
         
         KVNProgress.show()
-        
         
         APIRequestMethods.apiPostCallWithOutEncoding(API_RoomRatings, params: dicRequest) {(jsonData, error, statusCode) -> Void in
             if error != nil {
@@ -399,9 +368,5 @@ open class API: NSObject {
                 }
             }
         }
-        
-        
     }
-    
-    
 }

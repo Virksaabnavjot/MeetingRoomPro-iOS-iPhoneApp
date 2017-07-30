@@ -1,5 +1,5 @@
 //
-//  RateVC.swift
+//  RateViewController.swift
 //  MRPro
 //
 //  Created by Nav on  7/28/17.
@@ -8,7 +8,8 @@
 
 import UIKit
 import RateView
-class RateVC: UIViewController , UITableViewDelegate, UITableViewDataSource , UITextViewDelegate {
+
+class RateViewController: UIViewController , UITableViewDelegate, UITableViewDataSource , UITextViewDelegate {
 
     @IBOutlet weak var inputViewHeight: NSLayoutConstraint!
     @IBOutlet weak var reviews: UITableView!

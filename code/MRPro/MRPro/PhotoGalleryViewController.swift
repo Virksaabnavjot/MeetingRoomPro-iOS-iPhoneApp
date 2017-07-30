@@ -1,5 +1,5 @@
 //
-//  PhotoGalleryVC.swift
+//  PhotoGalleryViewController.swift
 //  MRPro
 //
 //  Created by Nav on  7/26/17.
@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class PhotoGalleryVC: UIViewController, UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
+class PhotoGalleryViewController: UIViewController, UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
     fileprivate let itemsPerRow: CGFloat = 2
     fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
 

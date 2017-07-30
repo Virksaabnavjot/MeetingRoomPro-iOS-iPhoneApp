@@ -14,7 +14,7 @@ import UIKit
 //Webservice URL
 let API_URL = "https://mrpro.000webhostapp.com/MRProApp/MRPro/MRPro/index.php/"
 
-
+//api request end-points
 let API_DeviceRegistration = "registerDevice.php"
 let API_Register = "user/postUser"
 let API_Login = "user/signIn"

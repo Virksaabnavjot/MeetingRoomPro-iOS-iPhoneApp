@@ -1178,10 +1178,10 @@
             </objects>
             <point key="canvasLocation" x="21.600000000000001" y="-447.52623688155927"/>
         </scene>
-        <!--Photo GalleryVC-->
+        <!--Photo Gallery View Controller-->
         <scene sceneID="L6T-RD-JXG">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BlY-cT-ys9" customClass="PhotoGalleryVC" customModule="MRPro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BlY-cT-ys9" customClass="PhotoGalleryViewController" customModule="MRPro" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IbC-hn-NyW"/>
                         <viewControllerLayoutGuide type="bottom" id="MqE-zZ-URG"/>
@@ -1257,10 +1257,10 @@
             </objects>
             <point key="canvasLocation" x="21.600000000000001" y="303.59820089955025"/>
         </scene>
-        <!--RateVC-->
+        <!--Rate View Controller-->
         <scene sceneID="jPb-NJ-avE">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="kIg-KY-4UN" customClass="RateVC" customModule="MRPro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="kIg-KY-4UN" customClass="RateViewController" customModule="MRPro" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j6f-WV-RV9"/>
                         <viewControllerLayoutGuide type="bottom" id="5id-Ip-ERA"/>
@@ -1440,7 +1440,7 @@
         <!--Room Booking-->
         <scene sceneID="4qp-Nm-zQg">
             <objects>
-                <viewController id="fsz-Ge-RWU" customClass="RoomBookingVC" customModule="MRPro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fsz-Ge-RWU" customClass="RoomBookingViewController" customModule="MRPro" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YlY-aM-2ZX"/>
                         <viewControllerLayoutGuide type="bottom" id="fIw-5C-oMX"/>

@@ -1,7 +1,7 @@
 //
-//  RoomBookingVC.swift
+//  RoomBookingViewController.swift
 //  MRPro
-//
+//  Purpose:
 //  Created by Nav on  7/26/17.
 //  Copyright © 2017 MeetingRoom Pro | Navjot Singh Virk | Gymandnutrition.com | Navsingh.org.uk. All rights reserved.
 //
@@ -9,7 +9,7 @@
 import UIKit
 import UIImageView_Letters
 
-class RoomBookingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RoomBookingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var startTime : Int = 0
     var endTime : Int = 0
     @IBOutlet weak var meetingTitleTxtFld: UITextField!
