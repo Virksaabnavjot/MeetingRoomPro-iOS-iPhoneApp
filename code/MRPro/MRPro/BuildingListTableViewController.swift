@@ -227,9 +227,9 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? SelfDesignedBuildingsTableViewCell else {
-            print("Unable to cast cell as SelfDesignedBuildingsTableViewCell")
-            return SelfDesignedBuildingsTableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? BuildingsCell else {
+            print("Unable to cast cell as BuildingsCell")
+            return BuildingsCell()
         }
         
         if let buildings = buildings {

@@ -43,8 +43,6 @@ class MyMeetingsViewController: UIViewController, UITableViewDelegate , UITableV
             }
         }
 
-        
-        
     }
     
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,8 +53,8 @@ class MyMeetingsViewController: UIViewController, UITableViewDelegate , UITableV
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath) as? SelfDesignedMeetingRoomsTableViewCell else {
-            return SelfDesignedMeetingRoomsTableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath) as? MeetingRoomsCell else {
+            return MeetingRoomsCell()
         }
         
        

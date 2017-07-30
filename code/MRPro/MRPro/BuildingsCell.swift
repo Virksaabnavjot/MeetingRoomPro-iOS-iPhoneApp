@@ -1,5 +1,5 @@
 //
-//  SelfDesignedBuildingsTableViewCell.swift
+//  BuildingsCell.swift
 //  MRPro
 //
 //  Created by Nav
@@ -10,7 +10,7 @@
 
 import UIKit
 
-class SelfDesignedBuildingsTableViewCell: UITableViewCell {
+class BuildingsCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!

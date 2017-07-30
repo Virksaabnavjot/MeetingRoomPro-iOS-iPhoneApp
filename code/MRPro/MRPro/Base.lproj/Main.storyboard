@@ -400,7 +400,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="110" id="iWO-QN-KoS" customClass="SelfDesignedBuildingsTableViewCell" customModule="MRPro" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="110" id="iWO-QN-KoS" customClass="BuildingsCell" customModule="MRPro" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iWO-QN-KoS" id="AUS-Zs-zHP">
@@ -685,7 +685,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoomCell" rowHeight="99" id="KXF-km-w57" customClass="SelfDesignedMeetingRoomsTableViewCell" customModule="MRPro" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoomCell" rowHeight="99" id="KXF-km-w57" customClass="MeetingRoomsCell" customModule="MRPro" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="99"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KXF-km-w57" id="OWJ-nC-onb">
@@ -1827,8 +1827,8 @@
         <image name="whiteBackgroundIcon" width="254" height="138"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Tpq-qc-mnK"/>
         <segue reference="alI-HS-PZ2"/>
-        <segue reference="w2V-3x-znN"/>
+        <segue reference="Tpq-qc-mnK"/>
+        <segue reference="U2S-kj-JGf"/>
     </inferredMetricsTieBreakers>
 </document>

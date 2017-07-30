@@ -1,5 +1,5 @@
 //
-//  SelfDesignedMeetingRoomsTableViewCell.swift
+//  MeetingRoomsCell.swift
 //  MRPro
 //
 //  Created by Nav
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelfDesignedMeetingRoomsTableViewCell: UITableViewCell {
+class MeetingRoomsCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var buildingName: UILabel!

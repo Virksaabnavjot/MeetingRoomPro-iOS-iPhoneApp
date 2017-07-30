@@ -36,10 +36,10 @@
 		F52E796B1F1D82FB00BD49CD /* BuildingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E796A1F1D82FB00BD49CD /* BuildingListTableViewController.swift */; };
 		F52E796D1F1D87D700BD49CD /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E796C1F1D87D700BD49CD /* Building.swift */; };
 		F52E79711F1D896800BD49CD /* MeetingRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E79701F1D896800BD49CD /* MeetingRoom.swift */; };
-		F52E79731F1D8CDF00BD49CD /* SelfDesignedBuildingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E79721F1D8CDF00BD49CD /* SelfDesignedBuildingsTableViewCell.swift */; };
+		F52E79731F1D8CDF00BD49CD /* BuildingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E79721F1D8CDF00BD49CD /* BuildingsCell.swift */; };
 		F52E79751F1D8FF700BD49CD /* MeetingRoomListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E79741F1D8FF700BD49CD /* MeetingRoomListTableViewController.swift */; };
 		F52E79771F1D90A300BD49CD /* CustomJsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E79761F1D90A300BD49CD /* CustomJsonParser.swift */; };
-		F52E797D1F1D958200BD49CD /* SelfDesignedMeetingRoomsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E797C1F1D958200BD49CD /* SelfDesignedMeetingRoomsTableViewCell.swift */; };
+		F52E797D1F1D958200BD49CD /* MeetingRoomsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E797C1F1D958200BD49CD /* MeetingRoomsCell.swift */; };
 		F52E797F1F1D9D2F00BD49CD /* jsonFile.json in Resources */ = {isa = PBXBuildFile; fileRef = F52E797E1F1D9D2F00BD49CD /* jsonFile.json */; };
 /* End PBXBuildFile section */
 
@@ -102,10 +102,10 @@
 		F52E796A1F1D82FB00BD49CD /* BuildingListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingListTableViewController.swift; sourceTree = "<group>"; };
 		F52E796C1F1D87D700BD49CD /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Building.swift; path = ../Building.swift; sourceTree = "<group>"; };
 		F52E79701F1D896800BD49CD /* MeetingRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeetingRoom.swift; path = ../MeetingRoom.swift; sourceTree = "<group>"; };
-		F52E79721F1D8CDF00BD49CD /* SelfDesignedBuildingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfDesignedBuildingsTableViewCell.swift; sourceTree = "<group>"; };
+		F52E79721F1D8CDF00BD49CD /* BuildingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingsCell.swift; sourceTree = "<group>"; };
 		F52E79741F1D8FF700BD49CD /* MeetingRoomListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingRoomListTableViewController.swift; sourceTree = "<group>"; };
 		F52E79761F1D90A300BD49CD /* CustomJsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomJsonParser.swift; sourceTree = "<group>"; };
-		F52E797C1F1D958200BD49CD /* SelfDesignedMeetingRoomsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfDesignedMeetingRoomsTableViewCell.swift; sourceTree = "<group>"; };
+		F52E797C1F1D958200BD49CD /* MeetingRoomsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingRoomsCell.swift; sourceTree = "<group>"; };
 		F52E797E1F1D9D2F00BD49CD /* jsonFile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jsonFile.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -243,8 +243,8 @@
 		F57EA6D01F2E4CB3009F2981 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F52E797C1F1D958200BD49CD /* SelfDesignedMeetingRoomsTableViewCell.swift */,
-				F52E79721F1D8CDF00BD49CD /* SelfDesignedBuildingsTableViewCell.swift */,
+				F52E797C1F1D958200BD49CD /* MeetingRoomsCell.swift */,
+				F52E79721F1D8CDF00BD49CD /* BuildingsCell.swift */,
 				F520B4071F1EB4A60020E9D0 /* SelfDesignedIndoorMapsInformationTableViewCell.swift */,
 				7D218F3F1F2CAAB7003643F6 /* ReviewCell.swift */,
 				6114A7171F2BD40800A1D38D /* BookingUsersCell.swift */,
@@ -562,7 +562,7 @@
 				6113C9B31F27D149009624A5 /* RoomBookingVC.swift in Sources */,
 				F520B4081F1EB4A60020E9D0 /* SelfDesignedIndoorMapsInformationTableViewCell.swift in Sources */,
 				F52E796B1F1D82FB00BD49CD /* BuildingListTableViewController.swift in Sources */,
-				F52E797D1F1D958200BD49CD /* SelfDesignedMeetingRoomsTableViewCell.swift in Sources */,
+				F52E797D1F1D958200BD49CD /* MeetingRoomsCell.swift in Sources */,
 				611AEEBC1F24AEA600DAFEE1 /* APIRequestMethods.swift in Sources */,
 				611AEEC01F24B1BE00DAFEE1 /* APIConstant.swift in Sources */,
 				F52E796D1F1D87D700BD49CD /* Building.swift in Sources */,
@@ -570,7 +570,7 @@
 				611AEEBD1F24AEA600DAFEE1 /* APIResponseHandler.swift in Sources */,
 				F52E79751F1D8FF700BD49CD /* MeetingRoomListTableViewController.swift in Sources */,
 				61DC1CC71F2919B2000D793F /* ImageCollectionCell.swift in Sources */,
-				F52E79731F1D8CDF00BD49CD /* SelfDesignedBuildingsTableViewCell.swift in Sources */,
+				F52E79731F1D8CDF00BD49CD /* BuildingsCell.swift in Sources */,
 				611AEEBB1F24AEA600DAFEE1 /* API.swift in Sources */,
 				F51A061B1F1A6336009985C8 /* UserLoginViewController.swift in Sources */,
 				F52E79771F1D90A300BD49CD /* CustomJsonParser.swift in Sources */,
