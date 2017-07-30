@@ -32,7 +32,6 @@
 		F51A4C491F1FBBC2001BC1C7 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A4C481F1FBBC2001BC1C7 /* MyProfileViewController.swift */; };
 		F51A4C4B1F1FDA38001BC1C7 /* MyMeetingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A4C4A1F1FDA38001BC1C7 /* MyMeetingsViewController.swift */; };
 		F51A4C551F1FDF26001BC1C7 /* MapNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A4C541F1FDF26001BC1C7 /* MapNavigationViewController.swift */; };
-		F520B4081F1EB4A60020E9D0 /* SelfDesignedIndoorMapsInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F520B4071F1EB4A60020E9D0 /* SelfDesignedIndoorMapsInformationTableViewCell.swift */; };
 		F52E796B1F1D82FB00BD49CD /* BuildingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E796A1F1D82FB00BD49CD /* BuildingListTableViewController.swift */; };
 		F52E796D1F1D87D700BD49CD /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E796C1F1D87D700BD49CD /* Building.swift */; };
 		F52E79711F1D896800BD49CD /* MeetingRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52E79701F1D896800BD49CD /* MeetingRoom.swift */; };
@@ -98,7 +97,6 @@
 		F51A4C481F1FBBC2001BC1C7 /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		F51A4C4A1F1FDA38001BC1C7 /* MyMeetingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMeetingsViewController.swift; sourceTree = "<group>"; };
 		F51A4C541F1FDF26001BC1C7 /* MapNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNavigationViewController.swift; sourceTree = "<group>"; };
-		F520B4071F1EB4A60020E9D0 /* SelfDesignedIndoorMapsInformationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfDesignedIndoorMapsInformationTableViewCell.swift; sourceTree = "<group>"; };
 		F52E796A1F1D82FB00BD49CD /* BuildingListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingListTableViewController.swift; sourceTree = "<group>"; };
 		F52E796C1F1D87D700BD49CD /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Building.swift; path = ../Building.swift; sourceTree = "<group>"; };
 		F52E79701F1D896800BD49CD /* MeetingRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeetingRoom.swift; path = ../MeetingRoom.swift; sourceTree = "<group>"; };
@@ -245,7 +243,6 @@
 			children = (
 				F52E797C1F1D958200BD49CD /* MeetingRoomsCell.swift */,
 				F52E79721F1D8CDF00BD49CD /* BuildingsCell.swift */,
-				F520B4071F1EB4A60020E9D0 /* SelfDesignedIndoorMapsInformationTableViewCell.swift */,
 				7D218F3F1F2CAAB7003643F6 /* ReviewCell.swift */,
 				6114A7171F2BD40800A1D38D /* BookingUsersCell.swift */,
 				61DC1CC61F2919B2000D793F /* ImageCollectionCell.swift */,
@@ -560,7 +557,6 @@
 				F51A06211F1A6336009985C8 /* MRPro.xcdatamodeld in Sources */,
 				611AEEB51F24A89400DAFEE1 /* RegistrationViewController.swift in Sources */,
 				6113C9B31F27D149009624A5 /* RoomBookingVC.swift in Sources */,
-				F520B4081F1EB4A60020E9D0 /* SelfDesignedIndoorMapsInformationTableViewCell.swift in Sources */,
 				F52E796B1F1D82FB00BD49CD /* BuildingListTableViewController.swift in Sources */,
 				F52E797D1F1D958200BD49CD /* MeetingRoomsCell.swift in Sources */,
 				611AEEBC1F24AEA600DAFEE1 /* APIRequestMethods.swift in Sources */,
