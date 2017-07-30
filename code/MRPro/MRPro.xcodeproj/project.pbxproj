@@ -100,8 +100,8 @@
 		F51A4C541F1FDF26001BC1C7 /* MapNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNavigationViewController.swift; sourceTree = "<group>"; };
 		F520B4071F1EB4A60020E9D0 /* SelfDesignedIndoorMapsInformationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfDesignedIndoorMapsInformationTableViewCell.swift; sourceTree = "<group>"; };
 		F52E796A1F1D82FB00BD49CD /* BuildingListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingListTableViewController.swift; sourceTree = "<group>"; };
-		F52E796C1F1D87D700BD49CD /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
-		F52E79701F1D896800BD49CD /* MeetingRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingRoom.swift; sourceTree = "<group>"; };
+		F52E796C1F1D87D700BD49CD /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Building.swift; path = ../Building.swift; sourceTree = "<group>"; };
+		F52E79701F1D896800BD49CD /* MeetingRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeetingRoom.swift; path = ../MeetingRoom.swift; sourceTree = "<group>"; };
 		F52E79721F1D8CDF00BD49CD /* SelfDesignedBuildingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfDesignedBuildingsTableViewCell.swift; sourceTree = "<group>"; };
 		F52E79741F1D8FF700BD49CD /* MeetingRoomListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingRoomListTableViewController.swift; sourceTree = "<group>"; };
 		F52E79761F1D90A300BD49CD /* CustomJsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomJsonParser.swift; sourceTree = "<group>"; };
@@ -153,6 +153,8 @@
 		611AEEB61F24AEA600DAFEE1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F52E79701F1D896800BD49CD /* MeetingRoom.swift */,
+				F52E796C1F1D87D700BD49CD /* Building.swift */,
 				611AEEBF1F24B1BE00DAFEE1 /* APIConstant.swift */,
 				611AEEB71F24AEA600DAFEE1 /* API.swift */,
 				611AEEB81F24AEA600DAFEE1 /* APIRequestMethods.swift */,
@@ -198,32 +200,16 @@
 			isa = PBXGroup;
 			children = (
 				611AEEB61F24AEA600DAFEE1 /* Model */,
+				F57EA6D01F2E4CB3009F2981 /* View */,
+				F57EA6D11F2E4D27009F2981 /* Controller */,
+				F57EA6CF1F2E4C3A009F2981 /* JsonParser */,
 				F51A06181F1A6336009985C8 /* AppDelegate.swift */,
-				F51A061A1F1A6336009985C8 /* UserLoginViewController.swift */,
-				F52E796C1F1D87D700BD49CD /* Building.swift */,
-				F52E79701F1D896800BD49CD /* MeetingRoom.swift */,
-				F52E79761F1D90A300BD49CD /* CustomJsonParser.swift */,
 				F51A061C1F1A6336009985C8 /* Main.storyboard */,
 				F51A06221F1A6337009985C8 /* Assets.xcassets */,
 				F51A06241F1A6337009985C8 /* LaunchScreen.storyboard */,
 				F51A06271F1A6337009985C8 /* Info.plist */,
 				F51A061F1F1A6336009985C8 /* MRPro.xcdatamodeld */,
-				F52E796A1F1D82FB00BD49CD /* BuildingListTableViewController.swift */,
-				F52E79741F1D8FF700BD49CD /* MeetingRoomListTableViewController.swift */,
-				F52E797C1F1D958200BD49CD /* SelfDesignedMeetingRoomsTableViewCell.swift */,
-				F52E79721F1D8CDF00BD49CD /* SelfDesignedBuildingsTableViewCell.swift */,
-				F520B4071F1EB4A60020E9D0 /* SelfDesignedIndoorMapsInformationTableViewCell.swift */,
 				F52E797E1F1D9D2F00BD49CD /* jsonFile.json */,
-				F51A4C481F1FBBC2001BC1C7 /* MyProfileViewController.swift */,
-				F51A4C4A1F1FDA38001BC1C7 /* MyMeetingsViewController.swift */,
-				F51A4C541F1FDF26001BC1C7 /* MapNavigationViewController.swift */,
-				611AEEB41F24A89400DAFEE1 /* RegistrationViewController.swift */,
-				6113C9B21F27D149009624A5 /* RoomBookingVC.swift */,
-				61DC1CC41F2917B8000D793F /* PhotoGalleryVC.swift */,
-				61DC1CC61F2919B2000D793F /* ImageCollectionCell.swift */,
-				61DC1CC81F2A7391000D793F /* RateVC.swift */,
-				6114A7171F2BD40800A1D38D /* BookingUsersCell.swift */,
-				7D218F3F1F2CAAB7003643F6 /* ReviewCell.swift */,
 			);
 			path = MRPro;
 			sourceTree = "<group>";
@@ -244,6 +230,44 @@
 				F51A063D1F1A6337009985C8 /* Info.plist */,
 			);
 			path = MRProUITests;
+			sourceTree = "<group>";
+		};
+		F57EA6CF1F2E4C3A009F2981 /* JsonParser */ = {
+			isa = PBXGroup;
+			children = (
+				F52E79761F1D90A300BD49CD /* CustomJsonParser.swift */,
+			);
+			name = JsonParser;
+			sourceTree = "<group>";
+		};
+		F57EA6D01F2E4CB3009F2981 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F52E797C1F1D958200BD49CD /* SelfDesignedMeetingRoomsTableViewCell.swift */,
+				F52E79721F1D8CDF00BD49CD /* SelfDesignedBuildingsTableViewCell.swift */,
+				F520B4071F1EB4A60020E9D0 /* SelfDesignedIndoorMapsInformationTableViewCell.swift */,
+				7D218F3F1F2CAAB7003643F6 /* ReviewCell.swift */,
+				6114A7171F2BD40800A1D38D /* BookingUsersCell.swift */,
+				61DC1CC61F2919B2000D793F /* ImageCollectionCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F57EA6D11F2E4D27009F2981 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F51A061A1F1A6336009985C8 /* UserLoginViewController.swift */,
+				F51A4C481F1FBBC2001BC1C7 /* MyProfileViewController.swift */,
+				611AEEB41F24A89400DAFEE1 /* RegistrationViewController.swift */,
+				F51A4C4A1F1FDA38001BC1C7 /* MyMeetingsViewController.swift */,
+				F52E796A1F1D82FB00BD49CD /* BuildingListTableViewController.swift */,
+				F52E79741F1D8FF700BD49CD /* MeetingRoomListTableViewController.swift */,
+				F51A4C541F1FDF26001BC1C7 /* MapNavigationViewController.swift */,
+				6113C9B21F27D149009624A5 /* RoomBookingVC.swift */,
+				61DC1CC41F2917B8000D793F /* PhotoGalleryVC.swift */,
+				61DC1CC81F2A7391000D793F /* RateVC.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
