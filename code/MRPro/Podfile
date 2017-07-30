@@ -9,6 +9,12 @@ target 'MRPro' do
   pod 'Alamofire'
   pod 'ChameleonFramework/Swift'
   pod 'SwiftPhotoGallery'
+  pod 'KVNProgress'
+  pod 'AlamofireImage'
+  pod 'TPKeyboardAvoiding', '~> 1.3'
+  pod 'SDWebImage', '~> 4.0'
+  pod 'RateView'
+  pod "UIImageView-Letters"
 
   target 'MRProTests' do
     inherit! :search_paths

@@ -21,7 +21,7 @@ class MeetingRoomListTableViewController: UITableViewController, UISearchBarDele
         
         tableView.tableHeaderView = searchController.searchBar
         searchController.searchBar.placeholder = "Search Meeting Rooms"
-        searchController.searchBar.barTintColor = UIColor.red
+        searchController.searchBar.barTintColor = UIColor.black
         definesPresentationContext = true
     }
     
@@ -77,8 +77,16 @@ class MeetingRoomListTableViewController: UITableViewController, UISearchBarDele
         cell.floorNumberLabel.text = "Floor: \(String(floorNumber))"
         cell.roomTypeLabel.text = "Type: \(roomType)"
         
+        cell.cellVu.layer.cornerRadius = 5.0
+        
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        self.performSegue(withIdentifier: "IndoorMapsSegue", sender: self)
+    }
+
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -86,7 +94,7 @@ class MeetingRoomListTableViewController: UITableViewController, UISearchBarDele
         if segue.identifier == "IndoorMapsSegue" {
             
             let row = self.tableView.indexPathForSelectedRow!.row
-            let destinationController = segue.destination as? IndoorMapsViewController
+            let destinationController = segue.destination as? MapNavigationViewController
             
             destinationController?.building = building
             if searchController.isActive && searchController.searchBar.text != "" {

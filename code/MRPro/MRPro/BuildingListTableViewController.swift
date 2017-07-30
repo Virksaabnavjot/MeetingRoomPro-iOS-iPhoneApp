@@ -8,17 +8,21 @@
 
 import Foundation
 import UIKit
-import ChameleonFramework
+//import ChameleonFramework
 
 class BuildingListTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
     
+   
     var buildings: [Building]?
-    var meetingRooms: [MeetingRoom]?
+    var meetingRvars: [MeetingRoom]?
     let apiRootUrl = "https://navsingh.org.uk/mrpro/"
     let searchController = UISearchController(searchResultsController: nil)
     
+    var currentBuilding : Building!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+         self.title = "Building List"
         //setting background color for the view
         view.backgroundColor = UIColor.white
         self.navigationController?.hidesBarsOnSwipe = true
@@ -27,20 +31,121 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
         
         tableView.tableHeaderView = searchController.searchBar
         searchController.searchBar.placeholder = "Search by Building Name"
-        searchController.searchBar.barTintColor = UIColor.purple
+        searchController.searchBar.barTintColor = UIColor.black
         definesPresentationContext = true
         
         self.refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         
-        sendServiceRequests("")
+//        sendServiceRequests("")
+        apiRequestForBuildings()
     }
     
     func updateSearchResults(for searchController: UISearchController) {
         if let searchString = searchController.searchBar.text {
-            sendServiceRequests(searchString)
+//            sendServiceRequests(searchString)
+//            apiRequestForBuildings()
+            apiSearchBuilding(stringToSearch: searchController.searchBar.text!)
+        }
+        else
+        {
+            apiRequestForBuildings()
         }
     }
     
+    
+    func apiSearchBuilding(stringToSearch: String)
+    {
+        var dictRequest: [String : Any] = [:]
+        dictRequest["text"] = stringToSearch
+        self.refreshControl?.beginRefreshing()
+        
+        API.sharedInstance.searchBuildingList(dictRequest) { (success, dictData) -> Void in
+            
+            if success == true {
+                print(dictData)
+                let userData = dictData as! NSDictionary
+                
+                if ((userData["data"]) != nil)
+                {
+                    
+                    let jsonParser = CustomJsonParser()
+                    
+                    self.buildings = jsonParser.parseServerBuildingJson(userData["data"] as! Array)
+                    
+                    self.tableView.reloadData()
+                    self.refreshControl?.endRefreshing()
+                    
+                }
+                
+                
+                
+                
+                
+                
+            }else{
+                
+                self.buildings = []
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
+                
+                
+                
+            }
+        }
+    }
+    
+    func apiRequestForBuildings()
+    {
+//        parseServerBuildingJson
+        
+        let dictRequest: [String : Any] = [:]
+
+        self.refreshControl?.beginRefreshing()
+        
+        API.sharedInstance.getBuildingList(dictRequest) { (success, dictData) -> Void in
+            
+            if success == true {
+                print(dictData)
+                let userData = dictData as! NSDictionary
+                
+                if ((userData["data"]) != nil)
+                {
+                    let jsonParser = CustomJsonParser()
+
+                    self.buildings = jsonParser.parseServerBuildingJson(userData["data"] as! Array)
+
+                    self.tableView.reloadData()
+                    self.refreshControl?.endRefreshing()
+                    
+                }
+                
+                
+                
+                
+                
+                
+            }else{
+                
+                self.displayAlert(dictData["code"] as! String!)
+                
+                
+            }
+        }
+    }
+    
+    func displayAlert(_ msg:String!,needDismiss:Bool = false,title:String = "MRPro")  {
+        
+        let alertController = UIAlertController(title:title, message:msg, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title:"ok", style: .cancel) { (action) in
+            if needDismiss {
+                self.dismiss(animated: true, completion: nil)
+            }
+            
+        }
+        alertController.addAction(defaultAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
     func sendServiceRequests(_ searchText: String) {
         /**
         sendRequest("buildings?name=\(searchText)") {
@@ -54,6 +159,7 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
             }
         }
  **/
+        
         let path : String = Bundle.main.path(forResource: "jsonFile", ofType: "json") as String!
         let data:NSData = NSData.dataWithContentsOfMappedFile(path as String) as! NSData
         let jsonParser = CustomJsonParser()
@@ -108,7 +214,8 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
     }
     
     func handleRefresh(_ refreshControl: UIRefreshControl) {
-        sendServiceRequests("")
+//        sendServiceRequests("")
+        apiRequestForBuildings()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -136,11 +243,64 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
             cell.cityLabel.text = "City: \(building.city)"
             cell.countryLabel.text = "Country: \(building.country)"
             cell.numberOfFloorsLabel.text = "Floors: \(building.numberOfFloors)"
+            cell.cellVu.layer.cornerRadius = 5.0
+           
+            cell.nameLabel.adjustsFontSizeToFitWidth = true
+            cell.cityLabel.adjustsFontSizeToFitWidth = true
+            cell.numberOfFloorsLabel.adjustsFontSizeToFitWidth = true
+            cell.countryLabel.adjustsFontSizeToFitWidth = true
+            cell.cityLabel.adjustsFontSizeToFitWidth = true
+            cell.numberOfFloorsLabel.adjustsFontSizeToFitWidth = true
+           
         } else {
             print("Sorry,No building information available")
         }
         
         return cell
+    }
+    
+    
+    override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        
+        var dictRequest: [String : Any] = [:]
+        currentBuilding = buildings?[indexPath.row]
+        dictRequest["buildingID"] = buildings?[indexPath.row].id
+
+        self.refreshControl?.beginRefreshing()
+        
+        API.sharedInstance.getRoomList(dictRequest) { (success, dictData) -> Void in
+            
+            if success == true {
+                print(dictData)
+                let userData = dictData as! NSDictionary
+                
+                if ((userData["data"]) != nil)
+                {
+                    let jsonParser = CustomJsonParser()
+                    
+                    
+                    self.currentBuilding.rooms = jsonParser.parseServerMeetingRooms(userData["data"] as! Array)
+                    
+                    self.performSegue(withIdentifier: "MeetingRoomListSegue", sender: self)
+
+                    
+                }
+                
+                
+                
+                
+                
+                
+            }else{
+                
+                self.displayAlert(dictData["code"] as! String!)
+                
+                
+            }
+        }
+
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -155,7 +315,7 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
             }
             
             let destinationController = segue.destination as? MeetingRoomListTableViewController
-            destinationController?.building = building
+            destinationController?.building = currentBuilding //building
         }
     }
 }

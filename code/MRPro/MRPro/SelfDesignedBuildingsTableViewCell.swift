@@ -16,5 +16,6 @@ class SelfDesignedBuildingsTableViewCell: UITableViewCell {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var numberOfFloorsLabel: UILabel!
     
+    @IBOutlet weak var cellVu: UIView!
     @IBOutlet weak var countryLabel: UILabel!
 }

@@ -21,8 +21,9 @@ struct MeetingRoom {
     let phone: String
     let street: String
     let city: String
-    
-    init(id: Int, buildingId: String, name: String, floorNumber: Int, coordinate: CLLocationCoordinate2D?, capacity: Int, roomType: String, fullName: String, phone: String, street: String, city: String) {
+    let directions : String
+    let email : String
+    init(id: Int, buildingId: String, name: String, floorNumber: Int, coordinate: CLLocationCoordinate2D?, capacity: Int, roomType: String, fullName: String, phone: String, street: String, city: String, directions : String , email : String) {
         self.id = id
         self.buildingId = buildingId
         self.name = name
@@ -34,6 +35,7 @@ struct MeetingRoom {
         self.phone = phone
         self.street = street
         self.city = city
-        
+        self.directions = directions
+        self.email = email
     }
 }

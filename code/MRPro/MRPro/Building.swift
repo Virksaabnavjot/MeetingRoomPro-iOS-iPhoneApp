@@ -17,7 +17,7 @@ struct Building {
     let address: String
     let city: String
     let country: String
-    let rooms: [MeetingRoom]
+    var rooms: [MeetingRoom]
     
     init(id: String, name: String, numberOfFloors: Int, coordinates: [CLLocationCoordinate2D], address: String, city: String, country: String, rooms: [MeetingRoom]) {
         self.id = id

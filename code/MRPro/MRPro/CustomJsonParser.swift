@@ -47,6 +47,112 @@ class CustomJsonParser {
         return buildings
     }
     
+    func parseServerBuildingJson(_ jsonData: Array<Any>) -> [Building] {
+        
+        //        let json = JSON(data: jsonData, options: .mutableContainers, error: nil)
+        //        let buildingsJson = json["information"]
+        var buildings = [Building]()
+        
+        for index in 0..<jsonData.count {
+            let buildingJson = jsonData[index] as! [String:String]
+            
+            //            let meetingRooms = parseMeetingRoomsJson(jsonData, buildingIndex: index)
+            
+            //            for index in 0..<buildingJson["shape"]["coordinates"][0].count {
+            //
+            //                let coordinateJson = buildingJson["shape"]["coordinates"][0][index]
+            //
+            //                if let coordinate = parseCoordinate(coordinateJson) {
+            //                    coordinates.append(coordinate)
+            //                }
+            //            }
+            var coordinates = parseLocationString(jsonData: buildingJson)
+            let building = Building(id: buildingJson["id"]!,
+                                    name: buildingJson["name"]!,
+                                    numberOfFloors: Int(buildingJson["floors"]!)!,
+                                    coordinates: coordinates,
+                                    address: buildingJson["address"]!,
+                                    city: buildingJson["city"]!,
+                                    country: buildingJson["country"]!, rooms: [])
+            
+            buildings.append(building)
+            coordinates.removeAll()
+        }
+        return buildings
+    }
+    
+    
+    func parseLocationString(jsonData: [String : String]) ->  [CLLocationCoordinate2D]{
+        var response = [ CLLocationCoordinate2D]()
+        if  jsonData["location"] != nil {
+            
+            let location : String! = jsonData["location"]
+            let latLongsArr : [String] = location.components(separatedBy: ",")
+            
+            for latLongObj in latLongsArr {
+                
+                let coordinatesArr : [String] = latLongObj.components(separatedBy: " ")
+                var lat : Double = 0.0
+                var long : Double = 0.0
+                for value in coordinatesArr {  // some strings have extra spaces between latitude and longitude so we need to make a filter to trim white spaces
+                    
+                    if value.characters.count > 3  {
+                        if lat == 0.0 {
+                            lat = Double(value)!
+                        }
+                        else if long == 0.0
+                        {
+                            long =  Double(value)!
+                        }
+                    }
+                }
+                
+                let coordinates = CLLocationCoordinate2D.init(latitude: lat, longitude: long)
+                
+                response.append(coordinates)
+                
+            }
+        }
+        
+        return response;
+        
+    }
+    
+    func parseServerMeetingRooms(_ jsonData: Array<Any>) -> [MeetingRoom] {
+        
+        var meetingRooms = [MeetingRoom]()
+        //        let json = JSON(data: jsonData, options: .mutableContainers, error: nil)
+        //        let meetingRoomsJson = json["information"][buildingIndex]["meetingRooms"]
+        
+        
+        for index in 0..<jsonData.count {
+            
+            var meetingRoomJson = jsonData[index] as! [String:String]
+            
+            //            let coordinateJson = meetingRoomsJson[index]["shape"]["coordinates"]
+            //            let coordinate = parseCoordinate(coordinateJson)
+            let latitude : Double = Double(meetingRoomJson["latitude"] as String!)!
+            
+            let longitude : Double = Double(meetingRoomJson["longitude"] as String!)!
+            
+            let meetingRoom = MeetingRoom(id: Int(meetingRoomJson["roomId"]!)!,
+                                          buildingId: meetingRoomJson["buildingId"]!,
+                                          name: meetingRoomJson["name"]!,
+                                          floorNumber: Int(meetingRoomJson["floorNumber"]!)!,
+                                          coordinate: CLLocationCoordinate2DMake(latitude, longitude),
+                                          capacity: Int(meetingRoomJson["capacity"]!)!,
+                                          roomType: meetingRoomJson["type"]!,
+                                          fullName: meetingRoomJson["name"]!,
+                                          phone: meetingRoomJson["phone"]!,
+                                          street: "",
+                                          city: "", directions : meetingRoomJson["directions"]!, email : meetingRoomJson["email"]!)
+            
+            meetingRooms.append(meetingRoom)
+        }
+        
+        return meetingRooms
+    }
+    
     func parseMeetingRoomsJson(_ jsonData: Data, buildingIndex: Int) -> [MeetingRoom] {
         
         var meetingRooms = [MeetingRoom]()
@@ -71,7 +177,9 @@ class CustomJsonParser {
                                           fullName: meetingRoomJson["fullName"].stringValue,
                                           phone: meetingRoomJson["phone"].stringValue,
                                           street: meetingRoomJson["street"].stringValue,
-                                          city: meetingRoomJson["city"].stringValue)
+                                          city: meetingRoomJson["city"].stringValue,
+                                          directions: meetingRoomJson["directions"].stringValue,
+                                          email: meetingRoomJson["email"].stringValue)
             
             meetingRooms.append(meetingRoom)
         }
