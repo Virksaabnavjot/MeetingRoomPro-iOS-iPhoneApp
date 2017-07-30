@@ -22,7 +22,7 @@
 		7D218F401F2CAAB7003643F6 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D218F3F1F2CAAB7003643F6 /* ReviewCell.swift */; };
 		F05E252601F6A5CB66B49795 /* Pods_MRPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20389BDCFA31B70C406B4A43 /* Pods_MRPro.framework */; };
 		F51A06191F1A6336009985C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A06181F1A6336009985C8 /* AppDelegate.swift */; };
-		F51A061B1F1A6336009985C8 /* UserLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A061A1F1A6336009985C8 /* UserLoginController.swift */; };
+		F51A061B1F1A6336009985C8 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A061A1F1A6336009985C8 /* UserLoginViewController.swift */; };
 		F51A061E1F1A6336009985C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F51A061C1F1A6336009985C8 /* Main.storyboard */; };
 		F51A06211F1A6336009985C8 /* MRPro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F51A061F1F1A6336009985C8 /* MRPro.xcdatamodeld */; };
 		F51A06231F1A6337009985C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F51A06221F1A6337009985C8 /* Assets.xcassets */; };
@@ -83,7 +83,7 @@
 		F2F280FE638FA4E772D91807 /* Pods_MRProTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRProTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51A06151F1A6336009985C8 /* MRPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MRPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51A06181F1A6336009985C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F51A061A1F1A6336009985C8 /* UserLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginController.swift; sourceTree = "<group>"; };
+		F51A061A1F1A6336009985C8 /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
 		F51A061D1F1A6336009985C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F51A06201F1A6336009985C8 /* MRPro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MRPro.xcdatamodel; sourceTree = "<group>"; };
 		F51A06221F1A6337009985C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 			children = (
 				611AEEB61F24AEA600DAFEE1 /* Model */,
 				F51A06181F1A6336009985C8 /* AppDelegate.swift */,
-				F51A061A1F1A6336009985C8 /* UserLoginController.swift */,
+				F51A061A1F1A6336009985C8 /* UserLoginViewController.swift */,
 				F52E796C1F1D87D700BD49CD /* Building.swift */,
 				F52E79701F1D896800BD49CD /* MeetingRoom.swift */,
 				F52E79761F1D90A300BD49CD /* CustomJsonParser.swift */,
@@ -548,7 +548,7 @@
 				61DC1CC71F2919B2000D793F /* ImageCollectionCell.swift in Sources */,
 				F52E79731F1D8CDF00BD49CD /* SelfDesignedBuildingsTableViewCell.swift in Sources */,
 				611AEEBB1F24AEA600DAFEE1 /* API.swift in Sources */,
-				F51A061B1F1A6336009985C8 /* UserLoginController.swift in Sources */,
+				F51A061B1F1A6336009985C8 /* UserLoginViewController.swift in Sources */,
 				F52E79771F1D90A300BD49CD /* CustomJsonParser.swift in Sources */,
 				F52E79711F1D896800BD49CD /* MeetingRoom.swift in Sources */,
 				61DC1CC51F2917B8000D793F /* PhotoGalleryVC.swift in Sources */,

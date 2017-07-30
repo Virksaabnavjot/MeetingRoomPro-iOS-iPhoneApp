@@ -10,8 +10,8 @@ import SwiftyJSON
 import ChameleonFramework
 import Foundation
 
-class UserLoginController: UIViewController {
-    let loginUrl = "https://www.navsingh.org.uk/mrpro/api/login.php"
+class UserLoginViewController: UIViewController {
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
