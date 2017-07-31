@@ -1,2 +1,0 @@
-# MRPro
-Meeting Room Pro
