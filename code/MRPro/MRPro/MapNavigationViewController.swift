@@ -57,7 +57,7 @@ class MapNavigationViewController: UIViewController , MKMapViewDelegate , UIImag
         self.coordinatesLbl.text = String(latDouble) + " ," + String(longDouble)
         self.coordinatesLbl.adjustsFontSizeToFitWidth  = true
         mapVu.delegate = self
-        //mapVu.mapType = MKMapType.hybridFlyover
+        mapVu.mapType = MKMapType.hybridFlyover
         
         if let meetingRoomCoordinate = meetingRoom.coordinate {
             let meetingRoomLocation = CLLocation(latitude: meetingRoomCoordinate.latitude,
