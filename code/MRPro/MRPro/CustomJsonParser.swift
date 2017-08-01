@@ -1,7 +1,7 @@
 //
 //  CustomJsonParser.swift
 //  MRPro
-//
+//  Purpose: This file helps parse building and meeting room data from json
 //  Created by Nav
 //  Copyright © 2017 MeetingRoom Pro | Navjot Singh Virk | Gymandnutrition.com | Navsingh.org.uk. All rights reserved.
 //
@@ -10,8 +10,12 @@ import Foundation
 import SwiftyJSON
 import CoreLocation
 
+/*
+ *Helps parse building and meeting room data from json
+ */
 class CustomJsonParser {
     
+    //this function parses the builging data -> usage in unit testing
     func parseBuildingJson(_ jsonData: Data) -> [Building] {
         
         let json = JSON(data: jsonData, options: .mutableContainers, error: nil)
@@ -47,25 +51,13 @@ class CustomJsonParser {
         return buildings
     }
     
+    //parses the buildings data from the web api
     func parseServerBuildingJson(_ jsonData: Array<Any>) -> [Building] {
         
-        //        let json = JSON(data: jsonData, options: .mutableContainers, error: nil)
-        //        let buildingsJson = json["information"]
         var buildings = [Building]()
         
         for index in 0..<jsonData.count {
             let buildingJson = jsonData[index] as! [String:String]
-            
-            //            let meetingRooms = parseMeetingRoomsJson(jsonData, buildingIndex: index)
-            
-            //            for index in 0..<buildingJson["shape"]["coordinates"][0].count {
-            //
-            //                let coordinateJson = buildingJson["shape"]["coordinates"][0][index]
-            //
-            //                if let coordinate = parseCoordinate(coordinateJson) {
-            //                    coordinates.append(coordinate)
-            //                }
-            //            }
             var coordinates = parseLocationString(jsonData: buildingJson)
             let building = Building(id: buildingJson["id"]!,
                                     name: buildingJson["name"]!,
@@ -81,7 +73,7 @@ class CustomJsonParser {
         return buildings
     }
     
-    
+    //parses the coordinates for building
     func parseLocationString(jsonData: [String : String]) ->  [CLLocationCoordinate2D]{
         var response = [ CLLocationCoordinate2D]()
         if  jsonData["location"] != nil {
@@ -106,11 +98,8 @@ class CustomJsonParser {
                         }
                     }
                 }
-                
                 let coordinates = CLLocationCoordinate2D.init(latitude: lat, longitude: long)
-                
                 response.append(coordinates)
-                
             }
         }
         
@@ -118,19 +107,14 @@ class CustomJsonParser {
         
     }
     
+    //parse json meeting room data from web api
     func parseServerMeetingRooms(_ jsonData: Array<Any>) -> [MeetingRoom] {
         
         var meetingRooms = [MeetingRoom]()
-        //        let json = JSON(data: jsonData, options: .mutableContainers, error: nil)
-        //        let meetingRoomsJson = json["information"][buildingIndex]["meetingRooms"]
-        
         
         for index in 0..<jsonData.count {
             
             var meetingRoomJson = jsonData[index] as! [String:String]
-            
-            //            let coordinateJson = meetingRoomsJson[index]["shape"]["coordinates"]
-            //            let coordinate = parseCoordinate(coordinateJson)
             let latitude : Double = Double(meetingRoomJson["latitude"] as String!)!
             
             let longitude : Double = Double(meetingRoomJson["longitude"] as String!)!
@@ -153,6 +137,7 @@ class CustomJsonParser {
         return meetingRooms
     }
     
+    //parses json data for meeting rooms -> Usage in unit tests
     func parseMeetingRoomsJson(_ jsonData: Data, buildingIndex: Int) -> [MeetingRoom] {
         
         var meetingRooms = [MeetingRoom]()
@@ -187,6 +172,7 @@ class CustomJsonParser {
         return meetingRooms
     }
     
+    //parses the coordinates -> usage in unit tests as well
     func parseCoordinate(_ coordinateJson: JSON) -> CLLocationCoordinate2D? {
         
         guard let latitudeValue = coordinateJson[0].rawValue as? NSNumber,

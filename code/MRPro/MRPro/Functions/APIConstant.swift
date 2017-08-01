@@ -27,7 +27,6 @@ let API_GetPhotos = "rooms/getRoomsImage"
 let API_UploadImage = "rooms/room_image"
 let API_PostReview = "rooms/postReview"
 let API_MyMeetingRooms = "rooms/getAllBookings"
-
 let API_RoomRatings = "rooms/getRoomReviews"
 
 //marking: other useful constants
