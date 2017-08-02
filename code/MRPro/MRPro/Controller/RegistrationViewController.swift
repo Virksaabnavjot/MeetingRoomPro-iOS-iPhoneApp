@@ -11,7 +11,7 @@ import UIKit
  User Registration
  */
 class RegistrationViewController: UIViewController {
-
+    
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var confirmPasswordTxtFld: UITextField!
     @IBOutlet weak var passwordTxtFld: UITextField!
@@ -27,7 +27,7 @@ class RegistrationViewController: UIViewController {
         self.registerBtn.layer.cornerRadius = self.registerBtn.frame.size.height/2.0
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -40,38 +40,38 @@ class RegistrationViewController: UIViewController {
         if (self.nameTxtFld.text?.isEmpty)!
         {
             self.displayAlert("Name Missing")
-
+            
         }
         else if (self.emailTxtFld.text?.isEmpty)!
         {
             self.displayAlert("Email Missing")
-
+            
         }
         else if (self.phoneNumberTxtFld.text?.isEmpty)!
         {
             self.displayAlert("Phone Number Missing")
-
+            
         }
         else if (self.passwordTxtFld.text?.isEmpty)!
         {
             self.displayAlert("Password Missing")
-
+            
         }
         else if (self.confirmPasswordTxtFld.text?.isEmpty)!
         {
             self.displayAlert("Confirm Password Missing")
-
+            
         }
         else if (self.passwordTxtFld.text != self.confirmPasswordTxtFld.text)
         {
             self.displayAlert("Confirm Password doesnot match with Password")
-
+            
         }
         else
         {
             //else proceed with registration
             var dictRequest: [String : Any] = [:]
-
+            
             //get user inputted data/details
             dictRequest["name"] = self.nameTxtFld.text
             dictRequest["email"] = self.emailTxtFld.text
@@ -91,13 +91,13 @@ class RegistrationViewController: UIViewController {
                     
                     //perform segue/transition to next screen
                     self.performSegue(withIdentifier: "toProfile", sender: self)
-              
+                    
                     
                 }else{
                     
                     //else display alert with error message
                     self.displayAlert(dictData["code"] as! String!)
-
+                    
                 }
             }
             
@@ -124,5 +124,5 @@ class RegistrationViewController: UIViewController {
         //show/present alert
         self.present(alertController, animated: true, completion: nil)
     }
-
+    
 }

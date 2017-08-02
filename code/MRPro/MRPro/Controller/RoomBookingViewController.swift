@@ -22,17 +22,17 @@ class RoomBookingViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var pickerCancelBtn: UIButton!
     @IBOutlet weak var datePckr: UIDatePicker!
     @IBOutlet weak var bookThisRoomBtn: UIButton!
-
+    
     @IBOutlet weak var endTimeButton: UIButton!
     var meetingRoom: MeetingRoom!
-
+    
     var selectedDateString : String!
     var arrayOfSelectedUsers : Array<String> = []
     var arrayOfUsers = [Dictionary<String, String>]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         self.pickerVu.isHidden = true
         datePckr.minimumDate = Date()
@@ -50,9 +50,9 @@ class RoomBookingViewController: UIViewController, UITableViewDelegate, UITableV
                 
                 self.arrayOfUsers = userData["data"] as! Array
                 DispatchQueue.main.async {
-
+                    
                     self.tblVu.reloadData()
-                
+                    
                 }
                 
             }else{
@@ -66,7 +66,7 @@ class RoomBookingViewController: UIViewController, UITableViewDelegate, UITableV
         
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -110,18 +110,18 @@ class RoomBookingViewController: UIViewController, UITableViewDelegate, UITableV
         {
             arrayOfSelectedUsers.append(arrayOfUsers[indexPath.row]["id"]!)
             self.tblVu.reloadData()
-
+            
             
         }
     }
     @IBAction func selectTimeBtnTapped(_ sender: Any) {
         let button = sender as! UIButton
-
+        
         self.pickerVu.isHidden = false
         self.pickerDoneBtn.tag = button.tag   //  assigned Select dates buttons tag so that when click on Done button we can identify that  which button was selected
         
     }
-
+    
     @IBAction func datePickerDoneBtnTapped(_ sender: Any) {
         
         self.pickerVu.isHidden = true
@@ -143,7 +143,7 @@ class RoomBookingViewController: UIViewController, UITableViewDelegate, UITableV
     }
     @IBAction func datePickerCancelBtnTapped(_ sender: Any) {
         self.pickerVu.isHidden = true
-
+        
     }
     @IBAction func bookThisRoomBtnTapped(_ sender: Any) {
         
@@ -155,7 +155,7 @@ class RoomBookingViewController: UIViewController, UITableViewDelegate, UITableV
         else if (selectedDateString.isEmpty == true)
         {
             self.displayAlert("Date Missing!")
-
+            
         }
         else if (startTime == 0)
         {
@@ -174,8 +174,8 @@ class RoomBookingViewController: UIViewController, UITableViewDelegate, UITableV
             dictRequest["users"] = self.arrayOfSelectedUsers
             dictRequest["startDate"] = String(self.startTime)
             dictRequest["endDate"] = String(self.endTime)
-
-           
+            
+            
             
             dictRequest["roomID"] = self.meetingRoom.id
             var userDict =  UserDefaults.standard.object(forKey: "userData") as! NSDictionary
@@ -190,8 +190,8 @@ class RoomBookingViewController: UIViewController, UITableViewDelegate, UITableV
                     
                     
                     self.navigationController?.popViewController(animated: true)
-                        
-                    }
+                    
+                }
                     
                 else{
                     
@@ -222,5 +222,5 @@ class RoomBookingViewController: UIViewController, UITableViewDelegate, UITableV
         
         self.present(alertController, animated: true, completion: nil)
     }
-
+    
 }

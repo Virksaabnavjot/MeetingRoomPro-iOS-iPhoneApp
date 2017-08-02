@@ -10,7 +10,7 @@ import Foundation
 @objc
 
 open class APIResponseHandler: NSObject {
-
+    
     var status: Bool = false
     var responseMessage: AnyObject?
     var responseCode: AnyObject?

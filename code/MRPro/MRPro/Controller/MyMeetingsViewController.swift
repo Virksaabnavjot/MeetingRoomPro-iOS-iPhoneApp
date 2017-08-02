@@ -2,7 +2,7 @@
 //  MyMeetingsViewController.swift
 //  MRPro
 //  Purpose: Handles My Meetings aka (the list of room booking for My meetings)
-//  Created by Nav 
+//  Created by Nav
 //  Copyright © 2017 MeetingRoom Pro | Navjot Singh Virk | Gymandnutrition.com | Navsingh.org.uk. All rights reserved.
 //
 
@@ -14,10 +14,10 @@ import UIKit
 class MyMeetingsViewController: UIViewController, UITableViewDelegate , UITableViewDataSource {
     
     @IBOutlet weak var tblVu: UITableView!
-
+    
     //rooms array
     var arrayOfRooms = [Dictionary<String, Any>]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,15 +52,15 @@ class MyMeetingsViewController: UIViewController, UITableViewDelegate , UITableV
         }
     }
     
-     //table view - counting number of rows
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    //table view - counting number of rows
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         //counting the rooms arrays size and using it for table view rows size
         return arrayOfRooms.count
         
     }
     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         //calling the MeeingRoomsCell - which is a custom cell for table view
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath) as? MeetingRoomsCell else {
@@ -92,7 +92,7 @@ class MyMeetingsViewController: UIViewController, UITableViewDelegate , UITableV
         //calling returnDateString method
         cell.startDate.text = returnDateString(inputDate: meetingRoom["startDate"] as! String)
         cell.endDate.text = returnDateString(inputDate: meetingRoom["endDate"] as! String)
-
+        
         //styling
         cell.cellVu.layer.cornerRadius = 5.0
         

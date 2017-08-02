@@ -12,18 +12,18 @@ import SDWebImage
 class PhotoGalleryViewController: UIViewController, UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
     fileprivate let itemsPerRow: CGFloat = 2
     fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
-
+    
     @IBOutlet weak var mainImgVu: UIImageView!
     var meetingRoom: MeetingRoom!
-
+    
     @IBOutlet weak var collectionVu: UICollectionView!
     var arrayOfPhotos = [Dictionary<String, String>]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Photo gallery"
-
+        
         // Do any additional setup after loading the view.
         
         
@@ -57,10 +57,10 @@ class PhotoGalleryViewController: UIViewController, UICollectionViewDelegate , U
                 
             }
         }
-
+        
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -96,7 +96,7 @@ class PhotoGalleryViewController: UIViewController, UICollectionViewDelegate , U
         return sectionInsets.left
     }
     
-
+    
     
     
     
@@ -108,27 +108,27 @@ class PhotoGalleryViewController: UIViewController, UICollectionViewDelegate , U
     
     //2
     func collectionView(_ collectionView: UICollectionView,
-                                 numberOfItemsInSection section: Int) -> Int {
+                        numberOfItemsInSection section: Int) -> Int {
         return arrayOfPhotos.count
     }
     
     //3
     func collectionView(_ collectionView: UICollectionView,
-                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell",
                                                       for: indexPath) as! ImageCollectionCell
         cell.imgVu.backgroundColor = UIColor.black
         
         cell.imgVu.sd_setImage(with: URL(string: "https://mrpro.000webhostapp.com/MRProApp/MRPro/MRPro/" + arrayOfPhotos[indexPath.row]["url"]!), placeholderImage: UIImage(named: "placeholder"))
-
+        
         // Configure the cell
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         self.mainImgVu.sd_setImage(with: URL(string: "https://mrpro.000webhostapp.com/MRProApp/MRPro/MRPro/" + arrayOfPhotos[indexPath.row]["url"]!), placeholderImage: UIImage(named: "placeholder"))
-
+        
     }
     
     
@@ -146,5 +146,5 @@ class PhotoGalleryViewController: UIViewController, UICollectionViewDelegate , U
         
         self.present(alertController, animated: true, completion: nil)
     }
-
+    
 }

@@ -89,7 +89,7 @@ class APIRequestMethods: SessionManager {
         self.default.request(strUrl, method: HTTPMethod.post, parameters: params, encoding: JSONEncoding(options: []), headers: nil).debugLog().responseSwiftyJSON({ (requestD, responseD, jsonData, error) in
             
             if error == nil {
-            
+                
                 debugPrint(jsonData)
                 debugPrint(requestD)
                 debugPrint(responseD ?? "No http response POST")
@@ -124,9 +124,9 @@ class APIRequestMethods: SessionManager {
             }
         })
     }
-
     
-    //MARK: GET API    
+    
+    //MARK: GET API
     class func apiGetCall(_ apiName:String,params:Dictionary<String,Any>? = nil,block mainBlock:((Dictionary<String,Any>?,NSError?,Int)->Void?)?){
         
         let strUrl: String = API_URL + apiName
@@ -179,7 +179,7 @@ class APIRequestMethods: SessionManager {
         let apiUrl: String = API_URL + apiName
         
         self.default.upload(multipartFormData: { (multipartFormData) in
-
+            
             for (key, value) in params! {
                 if (key != "picture")  {
                     multipartFormData.append((value as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
@@ -192,15 +192,15 @@ class APIRequestMethods: SessionManager {
                     multipartFormData.append(params!["picture"] as! Data, withName: "picture", fileName: filename, mimeType: "image/jpg")
                 }
             }
-
-        
+            
+            
         }, to: apiUrl) { (result) in
             
             switch result {
             case .success(let upload, _, _) :
                 
                 upload.uploadProgress(closure: { (progress) in
-
+                    
                 }).responseSwiftyJSON({ (requestD, responseD, jsonData, error) in
                     if error != nil{
                         mainBlock?(nil,error as NSError?, 400,false)

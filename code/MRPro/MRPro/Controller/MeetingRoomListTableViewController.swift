@@ -108,7 +108,7 @@ class MeetingRoomListTableViewController: UITableViewController, UISearchBarDele
     {
         self.performSegue(withIdentifier: "IndoorMapsSegue", sender: self)
     }
-
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

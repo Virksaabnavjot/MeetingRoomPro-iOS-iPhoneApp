@@ -28,7 +28,7 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.title = "Building List"
+        self.title = "Building List"
         
         //setting background color for the view
         view.backgroundColor = UIColor.white
@@ -68,8 +68,8 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
     
     
     /*method returns building in accordance to user input - our api allow
-    /search based on three factors- Use can search by Builing Name, City or Country the
-    building is located in*/
+     /search based on three factors- Use can search by Builing Name, City or Country the
+     building is located in*/
     func apiSearchBuilding(stringToSearch: String)
     {
         var dictRequest: [String : Any] = [:]
@@ -111,13 +111,13 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
     }
     
     /*
-    Method return list of buildings
-    */
+     Method return list of buildings
+     */
     func apiRequestForBuildings()
     {
-
+        
         let dictRequest: [String : Any] = [:]
-
+        
         self.refreshControl?.beginRefreshing()
         
         //make api request to get building list
@@ -132,7 +132,7 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
                     let jsonParser = CustomJsonParser()
                     //send the json to parser and get back the buildings array
                     self.buildings = jsonParser.parseServerBuildingJson(userData["data"] as! Array)
-
+                    
                     //load the new data into the table view
                     self.tableView.reloadData()
                     
@@ -220,7 +220,7 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
             cell.countryLabel.adjustsFontSizeToFitWidth = true
             cell.cityLabel.adjustsFontSizeToFitWidth = true
             cell.numberOfFloorsLabel.adjustsFontSizeToFitWidth = true
-           
+            
         } else {
             //else show a message
             print("Sorry,No building information available")
@@ -239,7 +239,7 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
         //this helps us to get all the meeting rooms from that building
         currentBuilding = buildings?[indexPath.row]
         dictRequest["buildingID"] = buildings?[indexPath.row].id
-
+        
         self.refreshControl?.beginRefreshing()
         
         //make request
@@ -267,7 +267,7 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
                 self.displayAlert(dictData["code"] as! String!)
             }
         }
-
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

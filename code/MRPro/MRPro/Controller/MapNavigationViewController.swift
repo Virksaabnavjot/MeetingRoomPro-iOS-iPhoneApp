@@ -37,10 +37,10 @@ class MapNavigationViewController: UIViewController , MKMapViewDelegate , UIImag
         
         self.title = "Meeting Room"
         self.nameLbl.text = meetingRoom.fullName
-    
+        
         self.nameLbl.adjustsFontSizeToFitWidth = true
         self.parentBuildingLbl.adjustsFontSizeToFitWidth = true
-       // self.nameLbl.adjustsFontSizeToFitWidth
+        // self.nameLbl.adjustsFontSizeToFitWidth
         self.floorLbl.text = "\(meetingRoom.floorNumber)"
         self.typeLbl.text = "\(meetingRoom.roomType)"
         self.capacityLbl.text = "\(meetingRoom.capacity)"
@@ -48,11 +48,11 @@ class MapNavigationViewController: UIViewController , MKMapViewDelegate , UIImag
         self.phoneLbl.text = "\(meetingRoom.phone)"
         self.directionsLbl.text = "Directions : " + "\(meetingRoom.directions)"
         self.emailLbl.text = "\(meetingRoom.email)"
-
+        
         let latDouble : Double = (meetingRoom.coordinate?.latitude)!
         
         let longDouble : Double = (meetingRoom.coordinate?.longitude)!
-
+        
         
         self.coordinatesLbl.text = String(latDouble) + " ," + String(longDouble)
         self.coordinatesLbl.adjustsFontSizeToFitWidth  = true
@@ -127,7 +127,7 @@ class MapNavigationViewController: UIViewController , MKMapViewDelegate , UIImag
     }
     @IBAction func reviewThisRoomBtnTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "toRateVC", sender: self)
-
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

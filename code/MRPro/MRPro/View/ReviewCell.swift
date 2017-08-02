@@ -13,19 +13,18 @@ import RateView
  custom tableview cell for room review data
  */
 class ReviewCell: UITableViewCell {
-
+    
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var commentLbl: UITextView!
     @IBOutlet weak var rateView: RateView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
-
+    
 }

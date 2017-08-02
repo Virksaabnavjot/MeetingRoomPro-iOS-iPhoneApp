@@ -28,7 +28,7 @@ open class API: NSObject {
     //completion handler -takes a string and returns void
     public typealias completionHandler = ((Bool,Dictionary<String, Any>)->Void)?
     public typealias completionHandlerCardUpload = ((Bool,Dictionary<String, AnyObject>?,CGFloat,Bool)->Void)?
-
+    
     
     //Error and Response Handler
     fileprivate func displayError(_ error:NSError!,needDismiss:Bool = false){
@@ -75,11 +75,11 @@ open class API: NSObject {
                 //if the status code is success get json data
                 let code = jsonData?["status"] as? String
                 if (code == "success") {
-                    KVNProgress.dismiss(completion: { 
+                    KVNProgress.dismiss(completion: {
                         block!(true,jsonData!)
                     })
                 }else{
-                    KVNProgress.dismiss(completion: { 
+                    KVNProgress.dismiss(completion: {
                         block!(false,jsonData!)
                     })
                 }
@@ -149,7 +149,7 @@ open class API: NSObject {
     func getRoomList(_ dicRequest:Dictionary<String,Any>?,block:completionHandler){
         
         KVNProgress.show()
-
+        
         APIRequestMethods.apiPostCallWithOutEncoding(API_RoomsList, params: dicRequest) {(jsonData, error, statusCode) -> Void in
             if error != nil {
                 KVNProgress.dismiss(completion: {
@@ -182,9 +182,9 @@ open class API: NSObject {
                 //if the status code is success get json data
                 let code = jsonData?["status"] as? String
                 if (code == "success") {
-                        block!(true,jsonData!)
+                    block!(true,jsonData!)
                 }else{
-                        block!(false,jsonData!)
+                    block!(false,jsonData!)
                 }
             }
         }
@@ -350,12 +350,12 @@ open class API: NSObject {
             }else{
                 //else dismiss progess bar
                 KVNProgress.dismiss(completion: {
-
+                    
                 })
             }
         }
     }
-
+    
     //get the reiews of the roomss
     func getRoomReviews(_ dicRequest:Dictionary<String,Any>?,block:completionHandler){
         
