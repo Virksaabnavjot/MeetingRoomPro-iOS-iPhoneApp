@@ -1,14 +1,17 @@
 //
 //  RoomBookingViewController.swift
 //  MRPro
-//  Purpose:
-//  Created by Nav on  7/26/17.
+//  Purpose: Handle room booking
+//  Created by Nav
 //  Copyright © 2017 MeetingRoom Pro | Navjot Singh Virk | Gymandnutrition.com | Navsingh.org.uk. All rights reserved.
 //
 
 import UIKit
 import UIImageView_Letters
 
+/*
+ Allows the user to book a meeting room
+ */
 class RoomBookingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var startTime : Int = 0
     var endTime : Int = 0
@@ -24,8 +27,9 @@ class RoomBookingViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var bookThisRoomBtn: UIButton!
     
     @IBOutlet weak var endTimeButton: UIButton!
-    var meetingRoom: MeetingRoom!
     
+    //creating variables
+    var meetingRoom: MeetingRoom!
     var selectedDateString : String!
     var arrayOfSelectedUsers : Array<String> = []
     var arrayOfUsers = [Dictionary<String, String>]()
@@ -41,44 +45,50 @@ class RoomBookingViewController: UIViewController, UITableViewDelegate, UITableV
         
         dictRequest["userID"] = userDict["id"]
         
+        //make api request - to get list of users (we show this list to the user, if
+        //the user wants to invite someone from this list to the meeting
         API.sharedInstance.getUsersList(dictRequest) { (success, dictData) -> Void in
             
             if success == true {
                 print(dictData)
                 let userData = dictData as! NSDictionary
                 
-                
+                //array of users
                 self.arrayOfUsers = userData["data"] as! Array
                 DispatchQueue.main.async {
                     
+                    //reload table view with new data
                     self.tblVu.reloadData()
                     
                 }
                 
             }else{
-                
+                //else show error message
                 self.displayAlert(dictData["code"] as! String!)
                 
                 
             }
         }
-        
-        
-        // Do any additional setup after loading the view.
+     
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
+    //retun number of users
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return arrayOfUsers.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
+        //custom cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BookingUsersCell
+        
+        //set information to cell label
         cell.nameLbl?.text = arrayOfUsers[indexPath.row]["name"]
         cell.imgVu.setImageWith(arrayOfUsers[indexPath.row]["name"])
         if (arrayOfSelectedUsers.contains(arrayOfUsers[indexPath.row]["id"]!))
@@ -89,6 +99,8 @@ class RoomBookingViewController: UIViewController, UITableViewDelegate, UITableV
         {
             cell.checkImgVu.image = UIImage.init(named: "")
         }
+        
+        //styling
         cell.imgVu.layer.cornerRadius = cell.imgVu.frame.size.width/2.0
         cell.imgVu.clipsToBounds = true
         cell.checkImgVu.layer.borderColor = UIColor.lightGray.cgColor
@@ -114,18 +126,24 @@ class RoomBookingViewController: UIViewController, UITableViewDelegate, UITableV
             
         }
     }
+    
+    //allows to select time
     @IBAction func selectTimeBtnTapped(_ sender: Any) {
         let button = sender as! UIButton
         
         self.pickerVu.isHidden = false
-        self.pickerDoneBtn.tag = button.tag   //  assigned Select dates buttons tag so that when click on Done button we can identify that  which button was selected
+        //  assigned Select dates buttons tag so that when click on Done button we can identify thatwhich button was selected
+        self.pickerDoneBtn.tag = button.tag
         
     }
     
+    //allows to pick a date for the meeting
     @IBAction func datePickerDoneBtnTapped(_ sender: Any) {
         
         self.pickerVu.isHidden = true
         let currentDate = self.datePckr.date
+    
+        //format date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM d yy, h:mm a"
         selectedDateString = dateFormatter.string(from: currentDate)
@@ -137,14 +155,17 @@ class RoomBookingViewController: UIViewController, UITableViewDelegate, UITableV
         else if button.tag == 20 {
             endTime =  Int(self.datePckr.date.timeIntervalSince1970)
             self.endButton.setTitle(selectedDateString, for: .normal)
-            // we have set a tag in End Button equals to 20 and
+            // we have set a tag in End Button equals to 20
         }
         
     }
+    
+    //helps cancel date picker
     @IBAction func datePickerCancelBtnTapped(_ sender: Any) {
         self.pickerVu.isHidden = true
         
     }
+    
     @IBAction func bookThisRoomBtnTapped(_ sender: Any) {
         
         //displaying alerts if any of the fields is empty when booking a room
@@ -169,19 +190,19 @@ class RoomBookingViewController: UIViewController, UITableViewDelegate, UITableV
         }
         else
         {
+            //getting user data
             var dictRequest: [String : Any] = [:]
             dictRequest["title"] = self.meetingTitleTxtFld.text
             dictRequest["users"] = self.arrayOfSelectedUsers
             dictRequest["startDate"] = String(self.startTime)
             dictRequest["endDate"] = String(self.endTime)
             
-            
-            
             dictRequest["roomID"] = self.meetingRoom.id
             var userDict =  UserDefaults.standard.object(forKey: "userData") as! NSDictionary
             
             dictRequest["userID"] = userDict["id"]
             
+            //make api request to book the room
             API.sharedInstance.bookRoom(dictRequest) { (success, dictData) -> Void in
                 
                 if success == true {
@@ -197,18 +218,15 @@ class RoomBookingViewController: UIViewController, UITableViewDelegate, UITableV
                     
                     self.displayAlert(dictData["code"] as! String!)
                     
-                    
                 }
             }
             
             
-            
         }
-        
         
     }
     
-    
+    //helps display an alert
     func displayAlert(_ msg:String!,needDismiss:Bool = false,title:String = "MRPro")  {
         
         let alertController = UIAlertController(title:title, message:msg, preferredStyle: .alert)
