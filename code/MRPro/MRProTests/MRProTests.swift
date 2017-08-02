@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import CoreLocation
+
 @testable import MRPro
 
 class MRProTests: XCTestCase {

@@ -13,15 +13,15 @@ import UIKit
  */
 class MyProfileViewController: UIViewController {
     
-    
     @IBOutlet weak var myProfileScrollView: UIScrollView!
-    
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var nameLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Profile"
         
+        //setting tint color
         myProfileScrollView.tintColor = UIColor.orange
         
         // get user defaults - the ones we saved in memory when used loged in
