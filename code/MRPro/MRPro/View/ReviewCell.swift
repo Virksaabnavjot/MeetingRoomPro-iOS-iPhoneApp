@@ -2,7 +2,7 @@
 //  ReviewCell.swift
 //  MRPro
 //  Purpose: This is a table view cell for displaying user reviews
-//  Created by Nav on 7/29/17.
+//  Created by Nav
 //  Copyright © 2017 MeetingRoom Pro | Navjot Singh Virk | Gymandnutrition.com | Navsingh.org.uk. All rights reserved.
 //
 
