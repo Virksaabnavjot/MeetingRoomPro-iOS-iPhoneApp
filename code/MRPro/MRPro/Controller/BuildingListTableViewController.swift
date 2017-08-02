@@ -76,6 +76,7 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
         dictRequest["text"] = stringToSearch
         self.refreshControl?.beginRefreshing()
         
+        //making request
         API.sharedInstance.searchBuildingList(dictRequest) { (success, dictData) -> Void in
             
             if success == true {
@@ -85,40 +86,41 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
                 if ((userData["data"]) != nil)
                 {
                     
+                    //creating a custom json parser instance
                     let jsonParser = CustomJsonParser()
                     
+                    //send the json to parser and get back the buildings array
                     self.buildings = jsonParser.parseServerBuildingJson(userData["data"] as! Array)
                     
+                    //load the new data into the table view
                     self.tableView.reloadData()
+                    
+                    //end refreshing
                     self.refreshControl?.endRefreshing()
                     
                 }
                 
-                
-                
-                
-                
-                
             }else{
-                
+                //set array as empty, reload and end refreshing in case of mishap
                 self.buildings = []
                 self.tableView.reloadData()
                 self.refreshControl?.endRefreshing()
-                
-                
                 
             }
         }
     }
     
+    /*
+    Method return list of buildings
+    */
     func apiRequestForBuildings()
     {
-//        parseServerBuildingJson
-        
+
         let dictRequest: [String : Any] = [:]
 
         self.refreshControl?.beginRefreshing()
         
+        //make api request to get building list
         API.sharedInstance.getBuildingList(dictRequest) { (success, dictData) -> Void in
             
             if success == true {
@@ -128,85 +130,90 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
                 if ((userData["data"]) != nil)
                 {
                     let jsonParser = CustomJsonParser()
-
+                    //send the json to parser and get back the buildings array
                     self.buildings = jsonParser.parseServerBuildingJson(userData["data"] as! Array)
 
+                    //load the new data into the table view
                     self.tableView.reloadData()
+                    
+                    //end refreshing
                     self.refreshControl?.endRefreshing()
                     
                 }
                 
-                
-                
-                
-                
-                
             }else{
-                
+                //else show an alert with the error
                 self.displayAlert(dictData["code"] as! String!)
-                
-                
             }
         }
     }
     
+    //display alert method- helps display an alert
     func displayAlert(_ msg:String!,needDismiss:Bool = false,title:String = "MRPro")  {
         
+        //creating instance of ui alert controller
         let alertController = UIAlertController(title:title, message:msg, preferredStyle: .alert)
+        
+        //asign default actions for controller
         let defaultAction = UIAlertAction(title:"ok", style: .cancel) { (action) in
             if needDismiss {
                 self.dismiss(animated: true, completion: nil)
             }
             
         }
+        //add actions to controller
         alertController.addAction(defaultAction)
         
+        //present the alert to the user
         self.present(alertController, animated: true, completion: nil)
-    }
-    func sendServiceRequests(_ searchText: String) {
-        
-        
-        let path : String = Bundle.main.path(forResource: "jsonFile", ofType: "json") as String!
-        let data:NSData = NSData.dataWithContentsOfMappedFile(path as String) as! NSData
-        let jsonParser = CustomJsonParser()
-        self.buildings = jsonParser.parseBuildingJson(data as Data)
-        self.tableView.reloadData()
-        self.refreshControl?.endRefreshing()
         
     }
     
     
     func handleRefresh(_ refreshControl: UIRefreshControl) {
+        
+        //get all buildings on referesh
         apiRequestForBuildings()
     }
     
+    //return number of rows for table view
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let buildings = buildings else {
             return 0
         }
         
+        //count number items in buildings array
         return buildings.count
     }
     
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        //retun our cusotom cell for showing the building information - BuildingsCell
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? BuildingsCell else {
             print("Unable to cast cell as BuildingsCell")
             return BuildingsCell()
         }
         
+        
         if let buildings = buildings {
+            //getting the building at each index of the array
             let building = buildings[indexPath.row]
-            //cell.backgroundColor = UIColor.blue
+            
+            //adding some styling to the cell
             cell.nameLabel?.textColor = UIColor.flatBlack()
             cell.cityLabel?.textColor = UIColor.flatBlue()
             cell.numberOfFloorsLabel?.textColor = UIColor.flatRedColorDark()
             cell.countryLabel?.textColor = UIColor.flatForestGreen()
+            
+            //set information to the cell labels
             cell.nameLabel.text = building.name
             cell.cityLabel.text = "City: \(building.city)"
             cell.countryLabel.text = "Country: \(building.country)"
             cell.numberOfFloorsLabel.text = "Floors: \(building.numberOfFloors)"
+            
+            //cell styling
             cell.cellVu.layer.cornerRadius = 5.0
-           
             cell.nameLabel.adjustsFontSizeToFitWidth = true
             cell.cityLabel.adjustsFontSizeToFitWidth = true
             cell.numberOfFloorsLabel.adjustsFontSizeToFitWidth = true
@@ -215,6 +222,7 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
             cell.numberOfFloorsLabel.adjustsFontSizeToFitWidth = true
            
         } else {
+            //else show a message
             print("Sorry,No building information available")
         }
         
@@ -226,11 +234,15 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
     {
         
         var dictRequest: [String : Any] = [:]
+        
+        //getting the row number when a building is selected from the list
+        //this helps us to get all the meeting rooms from that building
         currentBuilding = buildings?[indexPath.row]
         dictRequest["buildingID"] = buildings?[indexPath.row].id
 
         self.refreshControl?.beginRefreshing()
         
+        //make request
         API.sharedInstance.getRoomList(dictRequest) { (success, dictData) -> Void in
             
             if success == true {
@@ -239,33 +251,28 @@ class BuildingListTableViewController: UITableViewController, UISearchBarDelegat
                 
                 if ((userData["data"]) != nil)
                 {
+                    //create parser instance
                     let jsonParser = CustomJsonParser()
                     
-                    
+                    //telling the parser to parse meeting room data and return an array of rooms
                     self.currentBuilding.rooms = jsonParser.parseServerMeetingRooms(userData["data"] as! Array)
                     
+                    //perform segue to next screen/view
                     self.performSegue(withIdentifier: "MeetingRoomListSegue", sender: self)
-
                     
                 }
                 
-                
-                
-                
-                
-                
             }else{
-                
+                //else display error message
                 self.displayAlert(dictData["code"] as! String!)
-                
-                
             }
         }
 
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        //perform seque with an identifer
         if segue.identifier == "MeetingRoomListSegue" {
             let row = self.tableView.indexPathForSelectedRow!.row
             var building: Building?
