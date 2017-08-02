@@ -24,6 +24,7 @@ class CustomJsonParser {
         //create building object array- to store all buildings
         var buildings = [Building]()
         
+        //creating coordinates array - to save all the coordinates of building polygon
         var coordinates = [CLLocationCoordinate2D]()
         
         //loop through data
@@ -124,6 +125,7 @@ class CustomJsonParser {
             }
         }
         
+        //return coordinates
         return response;
         
     }
@@ -167,18 +169,26 @@ class CustomJsonParser {
     //parses json data for meeting rooms -> Usage in unit tests
     func parseMeetingRoomsJson(_ jsonData: Data, buildingIndex: Int) -> [MeetingRoom] {
         
+        //create array
         var meetingRooms = [MeetingRoom]()
+        
         let json = JSON(data: jsonData, options: .mutableContainers, error: nil)
+        
+        //rooms json - setting path where to find data
         let meetingRoomsJson = json["information"][buildingIndex]["meetingRooms"]
         
-        
+        //loop through json data for meeting rooms
         for index in 0..<meetingRoomsJson.count {
             
             var meetingRoomJson = meetingRoomsJson[index]
             
+            //get the coordinates data for room
             let coordinateJson = meetingRoomsJson[index]["shape"]["coordinates"]
+            
+            //call the parse method and pass the corrdinates data to it and get the parsed results
             let coordinate = parseCoordinate(coordinateJson)
             
+            //assign values to meeting room object
             let meetingRoom = MeetingRoom(id: meetingRoomJson["id"].intValue,
                                           buildingId: meetingRoomJson["buildingId"].stringValue,
                                           name: meetingRoomJson["name"].stringValue,
@@ -193,6 +203,7 @@ class CustomJsonParser {
                                           directions: meetingRoomJson["directions"].stringValue,
                                           email: meetingRoomJson["email"].stringValue)
             
+            //append
             meetingRooms.append(meetingRoom)
         }
         
@@ -202,6 +213,7 @@ class CustomJsonParser {
     //parses the coordinates -> usage in unit tests as well
     func parseCoordinate(_ coordinateJson: JSON) -> CLLocationCoordinate2D? {
         
+        //telling which to find latitude and longitude values at
         guard let latitudeValue = coordinateJson[0].rawValue as? NSNumber,
             let longitudeValue = coordinateJson[1].rawValue as? NSNumber else {
                 print("Unable to parse coordinate values")
@@ -211,8 +223,12 @@ class CustomJsonParser {
         let latitude = CLLocationDegrees(latitudeValue)
         let longitude = CLLocationDegrees(longitudeValue)
         
+        //create coordinates for map view usage using CLLocation Coordinate 2D from Corelocation
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
+        //returning the results/coordinate
         return coordinate
     }
 }
+
+
