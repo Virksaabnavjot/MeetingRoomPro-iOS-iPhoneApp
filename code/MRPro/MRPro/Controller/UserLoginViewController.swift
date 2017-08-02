@@ -19,7 +19,7 @@ class UserLoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
-
+    
     
     //Login button - activated when user clicks
     @IBAction func loginButton(_ sender: AnyObject) {
@@ -32,7 +32,7 @@ class UserLoginViewController: UIViewController {
         else if (self.passwordTextField.text?.isEmpty)!
         {
             self.displayAlert("Password Missing")
-
+            
         }
         else
         {
@@ -59,7 +59,7 @@ class UserLoginViewController: UIViewController {
                 }else{
                     //else display an alert with the status code / error message recieved
                     self.displayAlert(dictData["code"] as! String!)
-
+                    
                 }
             }
             
@@ -91,7 +91,7 @@ class UserLoginViewController: UIViewController {
     //signup button - takes the user to signup screen
     @IBAction func signUpBtnTapped(_ sender: Any) {
         performSegue(withIdentifier: "toSignUp", sender: self)
-
+        
     }
     
     //view did load method - activated when the view loads
@@ -102,10 +102,10 @@ class UserLoginViewController: UIViewController {
         self.loginBtn.layer.cornerRadius = self.loginBtn.frame.size.height/2.0
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
 }
 

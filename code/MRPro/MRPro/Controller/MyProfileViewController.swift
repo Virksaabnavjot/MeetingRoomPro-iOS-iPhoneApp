@@ -26,11 +26,11 @@ class MyProfileViewController: UIViewController {
         
         // get user defaults - the ones we saved in memory when used loged in
         let userDict =  UserDefaults.standard.object(forKey: "userData") as! NSDictionary
-
+        
         //show the user details in my profile
         self.nameLbl.text = userDict["name"] as? String
         self.emailLbl.text = userDict["email"] as? String
-
+        
     }
     
     override func didReceiveMemoryWarning() {
