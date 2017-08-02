@@ -15,19 +15,25 @@ import CoreLocation
  */
 class CustomJsonParser {
     
-    //this function parses the builging data -> usage in unit testing
+    //this function parses the building data -> usage in unit testing
     func parseBuildingJson(_ jsonData: Data) -> [Building] {
         
         let json = JSON(data: jsonData, options: .mutableContainers, error: nil)
         let buildingsJson = json["information"]
+        
+        //create building object array- to store all buildings
         var buildings = [Building]()
+        
         var coordinates = [CLLocationCoordinate2D]()
         
+        //loop through data
         for index in 0..<buildingsJson.count {
             let buildingJson = buildingsJson[index]
             
+            //parse the meeting room data from json
             let meetingRooms = parseMeetingRoomsJson(jsonData, buildingIndex: index)
             
+            //loop through data
             for index in 0..<buildingJson["shape"]["coordinates"][0].count {
                 
                 let coordinateJson = buildingJson["shape"]["coordinates"][0][index]
@@ -37,6 +43,7 @@ class CustomJsonParser {
                 }
             }
             
+            //assign information to building object
             let building = Building(id: buildingJson["id"].stringValue,
                                     name: buildingJson["name"].stringValue,
                                     numberOfFloors: buildingJson["numberOfFloors"].intValue,
@@ -45,20 +52,30 @@ class CustomJsonParser {
                                     city: buildingJson["city"].stringValue,
                                     country: buildingJson["country"].stringValue, rooms: meetingRooms)
             
+            //appending the building to the BUILDINGS array
             buildings.append(building)
             coordinates.removeAll()
+            
         }
+        
+        //returning all buildings
         return buildings
     }
     
     //parses the buildings data from the web api
     func parseServerBuildingJson(_ jsonData: Array<Any>) -> [Building] {
         
+        //creating building object array - to store all buildings
         var buildings = [Building]()
         
+        //loop through json data
         for index in 0..<jsonData.count {
             let buildingJson = jsonData[index] as! [String:String]
+            
+            //call parse coordinates method and pass it json data
             var coordinates = parseLocationString(jsonData: buildingJson)
+            
+            //assign information to building object
             let building = Building(id: buildingJson["id"]!,
                                     name: buildingJson["name"]!,
                                     numberOfFloors: Int(buildingJson["floors"]!)!,
@@ -67,9 +84,12 @@ class CustomJsonParser {
                                     city: buildingJson["city"]!,
                                     country: buildingJson["country"]!, rooms: [])
             
+            //append building to the array
             buildings.append(building)
             coordinates.removeAll()
         }
+        
+        //return all the buildings
         return buildings
     }
     
@@ -78,6 +98,7 @@ class CustomJsonParser {
         var response = [ CLLocationCoordinate2D]()
         if  jsonData["location"] != nil {
             
+            //get the location data from the json
             let location : String! = jsonData["location"]
             let latLongsArr : [String] = location.components(separatedBy: ",")
             
@@ -110,15 +131,19 @@ class CustomJsonParser {
     //parse json meeting room data from web api
     func parseServerMeetingRooms(_ jsonData: Array<Any>) -> [MeetingRoom] {
         
+        //create meeting room object array - to store al rooms
         var meetingRooms = [MeetingRoom]()
         
+        //loop through json data
         for index in 0..<jsonData.count {
             
             var meetingRoomJson = jsonData[index] as! [String:String]
-            let latitude : Double = Double(meetingRoomJson["latitude"] as String!)!
             
+            //rooms latitude n longitude
+            let latitude : Double = Double(meetingRoomJson["latitude"] as String!)!
             let longitude : Double = Double(meetingRoomJson["longitude"] as String!)!
             
+            //assign the values to room object
             let meetingRoom = MeetingRoom(id: Int(meetingRoomJson["roomId"]!)!,
                                           buildingId: meetingRoomJson["buildingId"]!,
                                           name: meetingRoomJson["name"]!,
@@ -131,9 +156,11 @@ class CustomJsonParser {
                                           street: "",
                                           city: "", directions : meetingRoomJson["directions"]!, email : meetingRoomJson["email"]!)
             
+            //append the meeting room to Meeting ROOMS array
             meetingRooms.append(meetingRoom)
         }
         
+        //return the rooms array
         return meetingRooms
     }
     
