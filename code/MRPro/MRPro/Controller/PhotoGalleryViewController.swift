@@ -1,21 +1,26 @@
 //
 //  PhotoGalleryViewController.swift
 //  MRPro
-//
-//  Created by Nav on  7/26/17.
+//  Purpose: Handles photo gallery operations
+//  Created by Nav
 //  Copyright © 2017 MeetingRoom Pro | Navjot Singh Virk | Gymandnutrition.com | Navsingh.org.uk. All rights reserved.
 //
 
 import UIKit
 import SDWebImage
 
+/*
+ Photo gallery for room
+ */
 class PhotoGalleryViewController: UIViewController, UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
     fileprivate let itemsPerRow: CGFloat = 2
     fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
     
+    //creating image view
     @IBOutlet weak var mainImgVu: UIImageView!
     var meetingRoom: MeetingRoom!
     
+    //image view collecion
     @IBOutlet weak var collectionVu: UICollectionView!
     var arrayOfPhotos = [Dictionary<String, String>]()
     
@@ -24,22 +29,23 @@ class PhotoGalleryViewController: UIViewController, UICollectionViewDelegate , U
         
         self.title = "Photo gallery"
         
-        // Do any additional setup after loading the view.
-        
-        
         var dictRequest: [String : Any] = [:]
         
+        //getting room id
         dictRequest["roomID"] = meetingRoom.id
         
-        
+        //making request to the api and getting photos for the rooms by its id
         API.sharedInstance.getRoomImages(dictRequest) { (success, dictData) -> Void in
             
+            //if status code == true, proceed with request
             if success == true {
                 print(dictData)
                 let userData = dictData as! NSDictionary
                 
+                //get array of photos
                 self.arrayOfPhotos = userData["data"] as! Array
                 
+                //reload the collection view
                 self.collectionVu.reloadData()
                 
                 if (self.arrayOfPhotos.count > 0)
@@ -47,29 +53,24 @@ class PhotoGalleryViewController: UIViewController, UICollectionViewDelegate , U
                     self.mainImgVu.sd_setImage(with: URL(string: "https://mrpro.000webhostapp.com/MRProApp/MRPro/MRPro/" + self.arrayOfPhotos[0]["url"]!), placeholderImage: UIImage(named: "placeholder"))
                 }
                 
-                
-                
-                
             }else{
                 
                 self.displayAlert(dictData["code"] as! String!)
                 
-                
             }
         }
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
+    
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //2
+        //add styling to colection view
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = UIScreen.main.bounds.size.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
@@ -77,14 +78,14 @@ class PhotoGalleryViewController: UIViewController, UICollectionViewDelegate , U
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
     
-    //3
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         return sectionInsets
     }
     
-    // 4
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -97,28 +98,26 @@ class PhotoGalleryViewController: UIViewController, UICollectionViewDelegate , U
     }
     
     
-    
-    
-    
-    
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    //2
+
+    //return photos count
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         return arrayOfPhotos.count
     }
     
-    //3
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        //collection cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell",
                                                       for: indexPath) as! ImageCollectionCell
         cell.imgVu.backgroundColor = UIColor.black
         
+        //set immages
         cell.imgVu.sd_setImage(with: URL(string: "https://mrpro.000webhostapp.com/MRProApp/MRPro/MRPro/" + arrayOfPhotos[indexPath.row]["url"]!), placeholderImage: UIImage(named: "placeholder"))
         
         // Configure the cell
@@ -130,9 +129,8 @@ class PhotoGalleryViewController: UIViewController, UICollectionViewDelegate , U
         self.mainImgVu.sd_setImage(with: URL(string: "https://mrpro.000webhostapp.com/MRProApp/MRPro/MRPro/" + arrayOfPhotos[indexPath.row]["url"]!), placeholderImage: UIImage(named: "placeholder"))
         
     }
-    
-    
-    
+
+    //helps display alert
     func displayAlert(_ msg:String!,needDismiss:Bool = false,title:String = "MRPro")  {
         
         let alertController = UIAlertController(title:title, message:msg, preferredStyle: .alert)
