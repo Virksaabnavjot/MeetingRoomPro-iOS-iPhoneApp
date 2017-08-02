@@ -11,6 +11,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+//creating an extension to DataRequest - extensions in swift as name suggests allows to add additional functionality
 extension DataRequest {
     public func debugLog() -> Self {
         #if DEBUG
@@ -232,7 +233,6 @@ class APIRequestMethods: SessionManager {
                 }
             }
             
-            // Contact Update
             if (params?.index(forKey: "picture") != nil) {
                 if params!["picture"] is Data {
                     multipartFormData.append(params!["picture"] as! Data, withName: "picture[0]", fileName: filename, mimeType: "image/jpg")

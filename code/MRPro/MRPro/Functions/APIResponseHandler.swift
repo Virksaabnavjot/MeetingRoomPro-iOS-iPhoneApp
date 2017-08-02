@@ -18,8 +18,6 @@ open class APIResponseHandler: NSObject {
     var isMatched: Bool = false
     
     func setResponse(_ dictTemp:Dictionary<String,AnyObject?>!){
-        
-//        _ = BasicFunctions.Dict_to_object(dictTemp, obj: self)
         responseMessage = dictTemp["responseMessage"] as? String as AnyObject?? ?? "SERVER_ERROR" as AnyObject?
         
     }

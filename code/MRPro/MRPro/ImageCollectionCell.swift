@@ -8,7 +8,9 @@
 
 import UIKit
 
-//ui collection view cell used in phot gallery
+/*
+ ui collection view cell used in phot gallery
+ */
 class ImageCollectionCell: UICollectionViewCell {
     @IBOutlet weak var imgVu: UIImageView!
     

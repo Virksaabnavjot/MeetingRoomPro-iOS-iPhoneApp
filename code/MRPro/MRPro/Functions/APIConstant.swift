@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 
 
-//Webservice URL
+//Webservice URL - I am using 000webhost.com fro hosting the web service its a free hosting service
 let API_URL = "https://mrpro.000webhostapp.com/MRProApp/MRPro/MRPro/index.php/"
 
 //api request end-points

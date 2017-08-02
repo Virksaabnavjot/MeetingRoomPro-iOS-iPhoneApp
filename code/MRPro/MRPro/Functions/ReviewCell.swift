@@ -8,6 +8,10 @@
 
 import UIKit
 import RateView
+
+/*
+ custom tableview cell for room review data
+ */
 class ReviewCell: UITableViewCell {
 
     @IBOutlet weak var nameLbl: UILabel!

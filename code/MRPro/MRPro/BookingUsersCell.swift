@@ -1,7 +1,7 @@
 //
 //  BookingUsersCell.swift
 //  MRPro
-//
+//  Purpose: helps create a custom table cell to display information
 //  Created by Nav on  7/29/17.
 //  Copyright © 2017 MeetingRoom Pro | Navjot Singh Virk | Gymandnutrition.com | Navsingh.org.uk. All rights reserved.
 //

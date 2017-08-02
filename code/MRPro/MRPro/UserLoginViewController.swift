@@ -1,6 +1,7 @@
 //
 //  UserLoginController.swift
 //  MRPro
+//  Purpose: Allows the user to login
 //  Created by Nav
 //  Copyright © 2017 MeetingRoom Pro | Navjot Singh Virk | Gymandnutrition.com | Navsingh.org.uk. All rights reserved.
 //
@@ -10,7 +11,9 @@ import SwiftyJSON
 import ChameleonFramework
 import Foundation
 
-
+/*
+ Class - Deals with user login
+ */
 class UserLoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -19,7 +22,7 @@ class UserLoginViewController: UIViewController {
 
     @IBAction func loginButton(_ sender: AnyObject) {
         
-        
+        //displaying alerts if user didn't input all the needed information
         if (self.emailTextField.text?.isEmpty)!
         {
             self.displayAlert("Email Missing")

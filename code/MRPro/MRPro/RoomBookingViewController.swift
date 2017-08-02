@@ -118,7 +118,7 @@ class RoomBookingViewController: UIViewController, UITableViewDelegate, UITableV
         let button = sender as! UIButton
 
         self.pickerVu.isHidden = false
-        self.pickerDoneBtn.tag = button.tag   // we ahve assidgned Select dates buttons tag so that when click on Done button we can identify that  whihc button was selected
+        self.pickerDoneBtn.tag = button.tag   //  assigned Select dates buttons tag so that when click on Done button we can identify that  which button was selected
         
     }
 
@@ -147,6 +147,7 @@ class RoomBookingViewController: UIViewController, UITableViewDelegate, UITableV
     }
     @IBAction func bookThisRoomBtnTapped(_ sender: Any) {
         
+        //displaying alerts if any of the fields is empty when booking a room
         if (self.meetingTitleTxtFld.text?.isEmpty == true)
         {
             self.displayAlert("Title Missing!")

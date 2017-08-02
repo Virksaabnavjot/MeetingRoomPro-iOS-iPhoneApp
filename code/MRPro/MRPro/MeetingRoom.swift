@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 
 /*
- struct for Meeting room object
+ struct for Meeting room object, CLCoordinate2D from the corelocation framework will be used to deal with coordinates data
  */
 struct MeetingRoom {
     let id: Int
