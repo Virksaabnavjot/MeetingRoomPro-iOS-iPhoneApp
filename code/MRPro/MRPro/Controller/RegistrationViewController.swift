@@ -1,12 +1,15 @@
 //
 //  RegistrationViewController.swift
 //  MRPro
-//
+//  Purpose: Handles user registration/signup
 //  Copyright © 2017 MeetingRoom Pro | Navjot Singh Virk | Gymandnutrition.com | Navsingh.org.uk. All rights reserved.
 //
 
 import UIKit
 
+/*
+ User Registration
+ */
 class RegistrationViewController: UIViewController {
 
     @IBOutlet weak var registerBtn: UIButton!
@@ -16,17 +19,24 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var emailTxtFld: UITextField!
     @IBOutlet weak var nameTxtFld: UITextField!
     override func viewDidLoad() {
+        
+        //load view
         super.viewDidLoad()
+        
+        // styling the register button - round corners
         self.registerBtn.layer.cornerRadius = self.registerBtn.frame.size.height/2.0
-
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
+    
+    //when register button is tapped
     @IBAction func registerBtnTapped(_ sender: Any) {
+        
+        //check if user have inputted necessary data in all fields, if not show an error alert
         if (self.nameTxtFld.text?.isEmpty)!
         {
             self.displayAlert("Name Missing")
@@ -59,63 +69,60 @@ class RegistrationViewController: UIViewController {
         }
         else
         {
+            //else proceed with registration
             var dictRequest: [String : Any] = [:]
 
+            //get user inputted data/details
             dictRequest["name"] = self.nameTxtFld.text
             dictRequest["email"] = self.emailTxtFld.text
             dictRequest["phone"] = self.phoneNumberTxtFld.text
             dictRequest["password"] = self.passwordTxtFld.text
             
+            //make api request to register
             API.sharedInstance.register(dictRequest) { (success, dictData) -> Void in
                 
+                //if request if sucessful
                 if success == true {
                     print(dictData)
                     let userData = dictData as! NSDictionary
                     
+                    //save user data in user defaults
                     UserDefaults.standard.set(userData["data"], forKey: "userData")
                     
+                    //perform segue/transition to next screen
                     self.performSegue(withIdentifier: "toProfile", sender: self)
-                    
-        
               
                     
                 }else{
                     
+                    //else display alert with error message
                     self.displayAlert(dictData["code"] as! String!)
 
-                    
                 }
             }
-
             
         }
         
-        
     }
     
+    //display alert method
     func displayAlert(_ msg:String!,needDismiss:Bool = false,title:String = "MRPro")  {
         
+        //create instance
         let alertController = UIAlertController(title:title, message:msg, preferredStyle: .alert)
+        
+        //assign actions to alert
         let defaultAction = UIAlertAction(title:"ok", style: .cancel) { (action) in
             if needDismiss {
                 self.dismiss(animated: true, completion: nil)
             }
             
         }
+        //add actions
         alertController.addAction(defaultAction)
         
+        //show/present alert
         self.present(alertController, animated: true, completion: nil)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
