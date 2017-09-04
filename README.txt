@@ -1,4 +1,4 @@
-README.TXT
+Welcome to MRPro Project
 
 Purpose: This file will assist you to understand different parts of the project.
 
