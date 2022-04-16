@@ -35,3 +35,6 @@ Folder: application/models (contains)
 Files: buildings_model.php, rooms_model.php, user_model.php
 
 <img src="https://github.com/Virksaabnavjot/MeetingRoomPro-iOS-iPhoneApp/blob/master/app_demo/App%20Demo/IMG_2803.PNG" >
+
+
+Copyrights - Navjot Singh Virk (https://navjot.mrvirk.com & https://mrvirk.com)
